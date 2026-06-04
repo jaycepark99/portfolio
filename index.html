@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>박정연 · 데이터 분석 포트폴리오</title>
+  <meta name="description" content="가설을 세우고 데이터로 검증해 실행 가능한 의사결정으로 연결합니다. 실험·통계, 코호트, 머신러닝, 대시보드 프로젝트 포트폴리오." />
+
+  <!-- Pretendard (한글 가독성 최적) -->
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <!-- JetBrains Mono (숫자·코드용) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <!-- 코드 문법 하이라이팅 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github.min.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a href="#hero" class="nav__brand">박정연<span>.</span></a>
+      <nav class="nav__links">
+        <a href="#strengths">핵심 역량</a>
+        <a href="#projects">프로젝트</a>
+        <a href="#downloads">자료</a>
+        <a class="nav__cta" href="resume.pdf" target="_blank" rel="noopener">이력서 PDF</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="wrap">
+        <p class="hero__eyebrow">DATA · ANALYTICS · DECISION</p>
+        <h1 class="hero__title" id="heroTitle"></h1>
+        <p class="hero__intro" id="heroIntro"></p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">프로젝트 보기</a>
+          <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn--ghost">이력서 PDF</a>
+        </div>
+        <ul class="hero__stats" id="heroStats"></ul>
+      </div>
+    </section>
+
+    <!-- ===== STRENGTHS ===== -->
+    <section class="section section--alt" id="strengths">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="section__tag">CORE STRENGTHS</span>
+          <h2 class="section__title">핵심 역량</h2>
+          <p class="section__sub">문제 정의부터 통계적 검증, 모델링, 대시보드까지 — 분석의 전 과정을 다룹니다.</p>
+        </header>
+        <div class="strengths" id="strengthsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="section__tag">PROJECTS</span>
+          <h2 class="section__title">프로젝트</h2>
+          <p class="section__sub">총 7개 프로젝트. 도메인으로 필터링하거나, 카드의 <strong>코드 보기</strong>로 분석 코드를 확인할 수 있습니다.</p>
+        </header>
+
+        <!-- 조합(프리셋) 안내 배지 (?set= 일 때만 표시) -->
+        <div class="set-note" id="setNote" style="display:none"></div>
+
+        <!-- 주요 프로젝트 -->
+        <div class="featured" id="featuredWrap">
+          <div class="featured__label"><span class="dot"></span> 주요 프로젝트</div>
+          <div id="featuredCard"></div>
+        </div>
+
+        <!-- 필터 -->
+        <div class="filters" id="filters"></div>
+
+        <!-- 전체 그리드 -->
+        <div class="grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===== DOWNLOADS ===== -->
+    <section class="section section--alt" id="downloads">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="section__tag">DOCUMENTS</span>
+          <h2 class="section__title">자료 다운로드</h2>
+          <p class="section__sub">상세 분석 과정과 시각화는 PDF에서 확인하실 수 있습니다.</p>
+        </header>
+        <div class="downloads">
+          <a class="download-card" href="portfolio.pdf" target="_blank" rel="noopener" download>
+            <div class="download-card__icon">📂</div>
+            <div class="download-card__body">
+              <h3>포트폴리오 (7개 프로젝트)</h3>
+              <p>실험·대시보드·머신러닝·마케팅 전체 분석 상세</p>
+            </div>
+            <span class="download-card__action">다운로드 ↓</span>
+          </a>
+          <a class="download-card" href="resume.pdf" target="_blank" rel="noopener" download>
+            <div class="download-card__icon">📄</div>
+            <div class="download-card__body">
+              <h3>이력서</h3>
+              <p>핵심 역량 · 경력 · 자격증 · 학력</p>
+            </div>
+            <span class="download-card__action">다운로드 ↓</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <div class="wrap footer__inner">
+      <div>
+        <p class="footer__name">박정연</p>
+        <p class="footer__line" id="footerTagline"></p>
+      </div>
+      <ul class="footer__links" id="footerLinks"></ul>
+    </div>
+    <div class="wrap footer__copy">© <span id="year"></span> 박정연 · Data Analytics Portfolio</div>
+  </footer>
+
+  <!-- ===== CODE MODAL ===== -->
+  <div class="modal" id="codeModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <header class="modal__head">
+        <h3 id="modalTitle"></h3>
+        <button class="modal__close" data-close aria-label="닫기">✕</button>
+      </header>
+      <div class="modal__tabs" id="modalTabs"></div>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- highlight.js -->
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
