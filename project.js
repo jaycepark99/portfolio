@@ -20,7 +20,23 @@
 
   const proj = byKey(params.get("p")) || PROJECTS[0];
   document.title = `${proj.title} · 박정연 포트폴리오`;
+
+  // 프리셋 링크로 들어오면 그 프리셋 안에서만 이전/다음이 순환하도록
+  const presetDef =
+    setParam && typeof PRESETS !== "undefined" && PRESETS[setParam] && setParam !== DEFAULT_SET
+      ? PRESETS[setParam]
+      : null;
+  const presetKeys = presetDef
+    ? [presetDef.featured, ...presetDef.show].filter((k, i, a) => byKey(k) && a.indexOf(k) === i)
+    : null;
+  // 현재 프로젝트가 프리셋에 포함되면 프리셋 목록으로, 아니면 전체로 순환
+  const ringKeys =
+    presetKeys && presetKeys.includes(proj.key) ? presetKeys : PROJECTS.map((p) => p.key);
+  const inPreset = !!presetKeys;
+  const listLabel = inPreset ? "← 프로젝트 목록" : "← 전체 프로젝트";
+
   $("#backLink").setAttribute("href", backHref);
+  $("#backLink").textContent = listLabel;
   $("#brandLink").setAttribute("href", "index.html" + (setParam ? `?set=${encodeURIComponent(setParam)}` : ""));
 
   const d = proj.detail || {};
@@ -148,7 +164,7 @@
   const headerHTML = `
     <section class="d-hero">
       <div class="wrap">
-        <a class="d-back" href="${esc(backHref)}">← 전체 프로젝트로</a>
+        <a class="d-back" href="${esc(backHref)}">${esc(inPreset ? "← 프로젝트 목록으로" : "← 전체 프로젝트로")}</a>
         <div class="d-hero__top">
           <span class="badge">${esc(proj.domainLabel)}</span>
           <span class="d-hero__period">${esc(proj.period)} · ${esc(proj.type)}</span>
@@ -281,9 +297,12 @@
 
   /* ---------- 프로젝트 간 이동 ---------- */
   function pagerHTML() {
-    const idx = PROJECTS.indexOf(proj);
-    const prev = PROJECTS[(idx - 1 + PROJECTS.length) % PROJECTS.length];
-    const next = PROJECTS[(idx + 1) % PROJECTS.length];
+    // 프리셋 안에서만(또는 전체) 순환
+    const n = ringKeys.length;
+    const idx = ringKeys.indexOf(proj.key);
+    const prev = byKey(ringKeys[(idx - 1 + n) % n]);
+    const next = byKey(ringKeys[(idx + 1) % n]);
+    const single = n <= 1;
     const link = (p, dir, label) =>
       `<a class="d-pager__item d-pager__item--${dir}" href="project.html?p=${esc(p.key)}${setQS}">
          <span class="d-pager__dir">${label}</span>
@@ -291,9 +310,9 @@
        </a>`;
     return `
       <section class="d-pager wrap">
-        ${link(prev, "prev", "← 이전 프로젝트")}
-        <a class="d-pager__all" href="${esc(backHref)}">전체 보기</a>
-        ${link(next, "next", "다음 프로젝트 →")}
+        ${single ? "" : link(prev, "prev", "← 이전 프로젝트")}
+        <a class="d-pager__all" href="${esc(backHref)}">${esc(inPreset ? "목록 보기" : "전체 보기")}</a>
+        ${single ? "" : link(next, "next", "다음 프로젝트 →")}
       </section>`;
   }
 
