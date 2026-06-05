@@ -25,6 +25,7 @@ const PROFILE = {
 const DEFAULT_SET = "default";
 const PRESETS = {
   default:   { label: "전체",            featured: "abtest", show: ["dashboard", "rfm", "growth", "churn", "ddi", "marketing"] },
+  core:      { label: "핵심 4선",         featured: "abtest", show: ["dashboard", "churn", "growth"] },
   finance:   { label: "금융·핀테크",      featured: "abtest", show: ["dashboard", "churn", "ddi"] },
   ecommerce: { label: "이커머스·리테일",  featured: "abtest", show: ["dashboard", "rfm", "growth", "ddi"] },
   growth:    { label: "그로스·데이터분석", featured: "abtest", show: ["growth", "rfm", "churn", "dashboard"] },
