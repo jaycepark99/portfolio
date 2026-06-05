@@ -86,13 +86,7 @@
   // 주요 프로젝트 분리 없이 전체 그리드로 (featured = 첫 카드)
   $("#projectGrid").innerHTML = visibleKeys.map((k) => cardHTML(byKey(k))).join("");
 
-  const setNote = $("#setNote");
-  if (!isDefaultView) {
-    setNote.innerHTML =
-      `<span class="set-chip">${esc(preset.label)} 맞춤 구성</span>` +
-      `<a class="set-all" href="index.html#projects">전체 프로젝트 보기 →</a>`;
-    setNote.style.display = "flex";
-  }
+  // 프리셋 안내 배너 없음 — 링크에 지정한 프로젝트만 그대로 노출 (큐레이션 유지)
 
   /* ================= 필터 (기본 전체보기에서만) ================= */
   const filtersEl = $("#filters");
