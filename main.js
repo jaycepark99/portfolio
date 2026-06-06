@@ -102,6 +102,7 @@
       { key: "ml", label: "머신러닝" },
       { key: "ecommerce", label: "E-commerce" },
       { key: "marketing", label: "마케팅" },
+      { key: "product", label: "바이브코딩·프로덕트" },
     ].filter((d) => d.key === "all" || present.has(d.key));
 
     filtersEl.innerHTML = DOMAINS.map(

@@ -24,7 +24,7 @@ const PROFILE = {
 
 const DEFAULT_SET = "default";
 const PRESETS = {
-  default:    { label: "전체",            featured: "abtest",    show: ["dashboard", "rfm", "growth", "churn", "ddi", "marketing"] },
+  default:    { label: "전체",            featured: "abtest",    show: ["dashboard", "rfm", "growth", "churn", "ddi", "marketing", "trainer"] },
   core:       { label: "핵심 4선",         featured: "abtest",    show: ["dashboard", "churn", "growth"] },
   commercial: { label: "커머셜·세일즈 분석", featured: "dashboard", show: ["abtest", "rfm", "growth", "ddi"] },
   flex:       { label: "ML·예측·평가",      featured: "churn",     show: ["ddi", "abtest", "dashboard"], gridExtra: ["growth"] },
@@ -1035,6 +1035,108 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
       retro: [
         "\"무엇을 측정할 것인가를 먼저 설계해야 한다\" — KPI를 먼저 설계해야 성과 판단 기준이 흔들리지 않음을 체득",
         "매체마다 역할이 다르므로(한 매체가 모든 KPI에서 우수할 수 없음), 목적에 따라 매체를 선택·배분하는 판단이 핵심",
+      ],
+    },
+  },
+
+  /* ============================================================ 08 TRAINER (바이브코딩 MVP) */
+  {
+    key: "trainer",
+    domain: "product",
+    domainLabel: "바이브코딩·프로덕트",
+    title: "AI 역검 연습 사이트 — 바이브코딩 MVP & 채널·퍼널 분석",
+    summary:
+      "Claude Code 바이브코딩으로 AI 역검 게임 연습 사이트를 직접 제작·배포하고, GA4·GTM·UTM으로 250+ 사용자의 유입·행동을 분석 — 채널별 '양 vs 질' 차이와 게임 퍼널을 진단",
+    period: "2026.05 ~ (운영 중)",
+    type: "개인 프로젝트 · 바이브코딩",
+    tools: ["Claude Code", "Vite·React", "Supabase", "Vercel", "GA4·GTM·UTM"],
+    metric: { value: "250+", label: "멀티채널 유입 사용자" },
+    chip: "바이브코딩 MVP · 채널·퍼널 분석",
+    links: [
+      { label: "🎮 사이트 체험하기", url: "https://jobda-trainer.vercel.app/?utm_source=portfolio&utm_medium=referral&utm_campaign=resume" },
+      { label: "가위바위보 게임 →", url: "https://jobda-trainer.vercel.app/games/rps?utm_source=portfolio&utm_medium=referral&utm_campaign=resume&utm_content=rps" },
+    ],
+    detail: {
+      objective:
+        "AI 역량검사(잡다 신역검) 게임 연습 사이트를 직접 만들고, 어느 채널이 '좋은 유저'를 데려오는지 데이터로 확인하는 것이 목표였습니다. '분석가가 제품을 만들고 측정·분석까지 한 사이클로 돈다'를 실증했습니다.",
+      question: "어느 채널이 진짜 몰입하는 유저를 데려오는가? 유입량(방문자 수)만 보면 될까?",
+      data: {
+        source: "직접 제작·운영하는 웹 서비스 (jobda-trainer.vercel.app)",
+        period: "2026.05 ~ (운영 중)",
+        scale: "GA4 250+ 사용자 · 10,983 이벤트 · UTM 멀티채널 (링커리어·에브리타임·네이버·인스타·티스토리)",
+        preprocessing: [],
+      },
+      sections: [
+        {
+          title: "1. 제품 — 바이브코딩으로 직접 제작",
+          body:
+            "AI 역량검사(잡다 신역검) 게임을 무제한 연습하는 웹 서비스를 Claude Code 바이브코딩으로 만들었습니다. 가위바위보·도형 회전·길 만들기·N-back 등 역검 미니게임에 더해, 정확도·반응속도·점수를 기록하는 개인 통계 대시보드, 목표 설정, 친구 공유 기능까지 구현했습니다. Vite+React(SPA)·Supabase·Vercel로 만들고 SEO·OG 메타까지 직접 세팅했습니다.",
+          images: [
+            {
+              src: "img/jobda-home.png",
+              caption: "직접 제작·배포한 신역검 연습 사이트 — 4종 역검 게임",
+              kind: "capture",
+            },
+            {
+              src: "img/jobda-records.png",
+              caption: "직접 만든 개인 통계 대시보드 — 게임별 최고 기록·정확도 추이·다음 연습 추천",
+              kind: "capture",
+            },
+          ],
+        },
+        {
+          title: "2. 측정 — GA4·GTM·UTM 계측 인프라",
+          body:
+            "결과를 주장하기 전에 '측정'부터 깔았습니다. GA4를 GTM으로 전환해 코드 수정 없이 클릭·이벤트를 추적하고, SPA 라우트 이동도 page_view로 잡았습니다. 외부 유입 링크에는 UTM(source·medium·campaign·content)을 설계해 어떤 채널·콘텐츠·위치(상단·푸터·게임바·글하단 CTA)에서 들어왔는지 구분되게 했습니다. 퍼널은 '사이트 진입 → 게임 페이지 → 게임 시작 → 게임 완료 → 목표 설정 → 목표 달성' 단계로 정의했습니다.",
+          image: {
+            src: "img/jobda-game.png",
+            caption: "게임 화면 하단의 공략 블로그 연결 CTA — UTM 전환 지점",
+            kind: "capture",
+          },
+        },
+        {
+          title: "3. 분석 — 채널별 '양 vs 질'의 역전",
+          body:
+            "GA4 퍼널을 채널별로 분해하자 '유입량'과 '실제 완료'가 정반대였습니다. 에브리타임은 유입 109명으로 1위지만 단계마다 약 절반씩 빠져 게임 완료는 23명에 그쳤습니다. 반면 링커리어는 유입이 절반(49명)인데 단계 전환율이 높아 완료 31명으로 에브리타임을 앞섰고, 네이버는 게임 시작→완료 전환이 100%였습니다. 세션 참여율도 네이버 86%·링커리어 71% vs 에브리타임 52%로 갈렸습니다. 즉 채널은 방문자 수가 아니라 '단계별 전환과 몰입'으로 평가해야 한다는 결론입니다.",
+          chart: {
+            type: "groupedBar",
+            title: "채널별 유입 vs 게임 완료 — '양'과 '질'의 역전",
+            labels: ["에브리타임", "링커리어", "네이버", "direct", "인스타"],
+            datasets: [
+              { label: "사이트 진입(유입)", data: [109, 49, 25, 29, 7] },
+              { label: "게임 완료", data: [23, 31, 23, 17, 2] },
+            ],
+            note: "에브리타임은 유입 1위지만 완료 23명 / 링커리어는 유입 절반인데 완료 31명",
+          },
+          table: {
+            headers: ["채널", "세션 참여율", "평균 참여시간", "재방문율"],
+            rows: [
+              ["에브리타임", "52%", "45초", "낮음"],
+              ["링커리어", "71%", "16분 52초", "52%"],
+              ["네이버", "86%", "24분 31초", "—"],
+              ["티스토리", "92%", "11분 46초", "—"],
+            ],
+          },
+        },
+        {
+          title: "4. 액션 — 채널 운영 제안",
+          body:
+            "분석을 근거로 채널 전략을 나눴습니다. 에브리타임은 양은 많지만 즉시 이탈하므로 '첫 화면에서 바로 플레이'되는 후킹을 개선하고, 링커리어·네이버는 의도가 분명한 고질(高質) 채널이므로 콘텐츠·홍보 자원을 집중하는 방향입니다.",
+        },
+      ],
+      resultStats: [
+        { value: "250+", label: "유입 사용자 · 6채널" },
+        { value: "49→31", label: "링커리어: 유입 절반인데 완료자 최다" },
+        { value: "양 ≠ 질", label: "채널은 '전환 질'로 평가" },
+      ],
+      results: [
+        "에브리타임은 유입 1위(109명)지만 단계마다 ~50% 이탈 → 게임 완료 23명 / 링커리어는 유입 49명인데 완료 31명으로 역전 → '유입량 ≠ 성과'",
+        "네이버는 게임 시작→완료 전환 100%·세션 참여율 86%로 검색 유입의 높은 의도를 확인",
+        "채널별 전환·몰입 차이를 근거로 '에브리타임=첫 화면 후킹 개선 / 링커리어·네이버=자원 집중' 운영 액션 도출",
+      ],
+      retro: [
+        "유입량만 보면 에브리타임이 1등이지만 몰입·재방문(질)은 링커리어·네이버가 압도 — 지표는 '양'이 아니라 '목적에 맞는 질'로 봐야 함을 데이터로 체득",
+        "제품 제작(바이브코딩) → 측정(GA4·GTM·UTM) → 분석(채널·퍼널)까지 한 사이클을 직접 운영. 데이터가 더 쌓이면 코호트 재방문·게임별 이탈 단계까지 확장할 계획",
       ],
     },
   },

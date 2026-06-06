@@ -176,6 +176,16 @@
           <span class="d-hero__metric-val">${esc(proj.metric.value)}</span>
           <span class="d-hero__metric-lab">${esc(proj.metric.label)}</span>
         </div>
+        ${
+          proj.links && proj.links.length
+            ? `<div class="d-hero__links" style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px;">${proj.links
+                .map(
+                  (l) =>
+                    `<a href="${esc(l.url)}" target="_blank" rel="noopener" style="display:inline-block;padding:8px 15px;border:1px solid var(--accent);border-radius:8px;color:var(--accent);text-decoration:none;font-size:13px;font-weight:600;">${esc(l.label)}</a>`
+                )
+                .join("")}</div>`
+            : ""
+        }
       </div>
     </section>`;
 
