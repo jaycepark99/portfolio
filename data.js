@@ -27,7 +27,7 @@ const PRESETS = {
   default:    { label: "전체",            featured: "abtest",    show: ["dashboard", "rfm", "growth", "churn", "ddi", "marketing"] },
   core:       { label: "핵심 4선",         featured: "abtest",    show: ["dashboard", "churn", "growth"] },
   commercial: { label: "커머셜·세일즈 분석", featured: "dashboard", show: ["abtest", "rfm", "growth", "ddi"] },
-  flex:       { label: "ML·예측·평가",      featured: "churn",     show: ["ddi", "abtest", "dashboard"] },
+  flex:       { label: "ML·예측·평가",      featured: "churn",     show: ["ddi", "abtest", "dashboard"], gridExtra: ["growth"] },
   finance:   { label: "금융·핀테크",      featured: "abtest", show: ["dashboard", "churn", "ddi"] },
   ecommerce: { label: "이커머스·리테일",  featured: "abtest", show: ["dashboard", "rfm", "growth", "ddi"] },
   growth:    { label: "그로스·데이터분석", featured: "abtest", show: ["growth", "rfm", "churn", "dashboard"] },

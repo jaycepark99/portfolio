@@ -31,6 +31,9 @@
   const featuredKey = byKey(preset.featured) ? preset.featured : "abtest";
   const showKeys = (preset.show || []).filter((k) => byKey(k) && k !== featuredKey);
   const visibleKeys = [featuredKey, ...showKeys];
+  // 그리드에만 추가 노출(핵심역량 칩·큐카드는 visibleKeys 그대로 유지)
+  const extraKeys = (preset.gridExtra || []).filter((k) => byKey(k) && !visibleKeys.includes(k));
+  const gridKeys = [...visibleKeys, ...extraKeys];
 
   const detailHref = (k) => `project.html?p=${encodeURIComponent(k)}${setQS}`;
 
@@ -84,7 +87,7 @@
 
   /* ================= 렌더 ================= */
   // 주요 프로젝트 분리 없이 전체 그리드로 (featured = 첫 카드)
-  $("#projectGrid").innerHTML = visibleKeys.map((k) => cardHTML(byKey(k))).join("");
+  $("#projectGrid").innerHTML = gridKeys.map((k) => cardHTML(byKey(k))).join("");
 
   // 프리셋 안내 배너 없음 — 링크에 지정한 프로젝트만 그대로 노출 (큐레이션 유지)
 
