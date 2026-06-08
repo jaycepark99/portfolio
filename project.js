@@ -90,15 +90,58 @@
       </details>`;
   }
 
+  // 자동 줄바꿈: 문장 끝(.!?)과 '괄호 밖 콤마'에서 1차로 끊은 뒤,
+  // 너무 짧은 조각은 이웃과 합친다 → 양쪽이 다 충분히 길 때만 줄바꿈이 남는다.
+  // (나열 콤마는 항목이 짧아 자동 병합되고, 두 절을 가르는 긴 콤마는 양쪽이 길어 줄바꿈 유지)
+  function smartBreak(p) {
+    const sentences = String(p).split(/(?<=[.!?])\s+(?=\S)/);
+    const out = [];
+    for (let s of sentences) {
+      s = s.trim();
+      if (!s) continue;
+      let depth = 0, buf = "", lines = [];
+      for (let i = 0; i < s.length; i++) {
+        const ch = s[i];
+        if (ch === "(" || ch === "\uFF08") depth++;
+        else if (ch === ")" || ch === "\uFF09") depth = Math.max(0, depth - 1);
+        buf += ch;
+        if (ch === "," && depth === 0 && s[i + 1] === " ") {
+          lines.push(buf.trim());
+          buf = "";
+          i++; // 콤마 뒤 공백 건너뜀
+        }
+      }
+      if (buf.trim()) lines.push(buf.trim());
+      // 앞이든 뒤든 너무 짧은 조각은 이웃과 합친다 — 양쪽 다 충분히 길 때만 줄바꿈을 유지.
+      const MIN = 28;
+      let segs = lines.slice(), changed = true;
+      while (changed && segs.length > 1) {
+        changed = false;
+        for (let i = 0; i < segs.length; i++) {
+          if (segs[i].length < MIN) {
+            if (i > 0) { segs[i - 1] += " " + segs[i]; segs.splice(i, 1); }
+            else { segs[1] = segs[0] + " " + segs[1]; segs.splice(0, 1); }
+            changed = true;
+            break;
+          }
+        }
+      }
+      out.push(segs.join("\n"));
+    }
+    return out.join("\n");
+  }
+
   function bodyText(body) {
     if (!body) return "";
     const arr = Array.isArray(body) ? body : [body];
     return arr
       .map((p) => {
-        // 문장 끝(.!?) + 공백에서만 줄바꿈 → 문장이 중간에 어색하게 끊기지 않음.
-        // 소수점(0.96, +9.03%)은 마침표 뒤에 공백이 없어 끊기지 않음.
-        const html = esc(p).replace(/([.!?])\s+(?=\S)/g, "$1<br>");
-        return `<p class="d-text">${html}</p>`;
+        // 본문에 직접 넣은 \n이 있으면 그걸 그대로(수동 우선), 없으면 자동 절 분할.
+        const src = String(p).includes("\n") ? String(p) : smartBreak(String(p));
+        return src
+          .split(/\n\s*\n/)
+          .map((para) => `<p class="d-text">${esc(para).replace(/\n/g, "<br>")}</p>`)
+          .join("");
       })
       .join("");
   }

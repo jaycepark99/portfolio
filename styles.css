@@ -387,7 +387,8 @@ a { color: inherit; text-decoration: none; }
 .d-h2__no { font-family: var(--mono); font-size: .9rem; font-weight: 700; color: var(--accent-2); }
 .d-h2__sub { font-size: .9rem; font-weight: 600; color: var(--ink-soft); letter-spacing: 0; }
 .d-h3 { font-size: 1rem; font-weight: 700; margin: 24px 0 10px; }
-.d-text { color: var(--ink); font-size: 1rem; line-height: 1.8; margin-bottom: 12px; max-width: 74ch; text-wrap: pretty; }
+.d-text { color: var(--ink); font-size: 1rem; line-height: 1.8; margin-bottom: 12px; text-wrap: pretty; }
+@media (max-width: 600px) { .d-text br { display: none; } }  /* 모바일은 고정 줄바꿈 해제 → 자연 흐름 */
 .d-question {
   font-size: 1.12rem; font-weight: 700; color: var(--accent); line-height: 1.6;
   padding: 16px 22px; border-left: 4px solid var(--accent-2); background: var(--accent-bg);
