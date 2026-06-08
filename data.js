@@ -33,6 +33,8 @@ const PRESETS = {
   growth:    { label: "그로스·데이터분석", featured: "abtest", show: ["growth", "rfm", "churn", "dashboard"] },
   bio:       { label: "바이오·제약",      featured: "abtest", show: ["ddi", "churn", "dashboard"] },
   marketing: { label: "마케팅",          featured: "abtest", show: ["marketing", "rfm", "growth"] },
+  serveone:  { label: "구매·운영 데이터·바이브코딩", featured: "abtest", show: ["dashboard", "growth", "trainer"] },
+  modoodoc:  { label: "세일즈·운영·실행가", featured: "abtest", show: ["dashboard", "trainer", "growth", "rfm"] },
 };
 
 const HERO_STATS = [
