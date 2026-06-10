@@ -31,7 +31,9 @@
     : null;
   // 현재 프로젝트가 프리셋에 포함되면 프리셋 목록으로, 아니면 전체로 순환
   const ringKeys =
-    presetKeys && presetKeys.includes(proj.key) ? presetKeys : PROJECTS.map((p) => p.key);
+    presetKeys && presetKeys.includes(proj.key)
+      ? presetKeys
+      : PROJECTS.filter((p) => !p.hidden || p.key === proj.key).map((p) => p.key);
   const inPreset = !!presetKeys;
   const listLabel = inPreset ? "← 프로젝트 목록" : "← 전체 프로젝트";
 
@@ -47,7 +49,13 @@
 
   function tableHTML(t) {
     if (!t) return "";
-    const head = t.headers.map((h) => `<th>${esc(h)}</th>`).join("");
+    const head = t.headers
+      .map((h, i) =>
+        t.sortable
+          ? `<th data-sort="${i}"><button class="th-sort" type="button">${esc(h)}<span class="th-sort__ico"></span></button></th>`
+          : `<th>${esc(h)}</th>`
+      )
+      .join("");
     const rows = t.rows
       .map(
         (r) =>
@@ -56,7 +64,7 @@
             .join("")}</tr>`
       )
       .join("");
-    return `<div class="d-table-wrap"><table class="d-table"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
+    return `<div class="d-table-wrap"><table class="d-table${t.sortable ? " d-table--sortable" : ""}"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
   }
 
   let chartSeq = 0;
@@ -285,6 +293,7 @@
         ${tableHTML(s.table)}
         ${imagesHTML(s)}
         ${codeHTML(s.code)}
+        ${s.cta ? `<a class="d-cta" href="project.html?p=${esc(s.cta.to)}${setQS}"><span class="d-cta__txt">${esc(s.cta.text)}</span><span class="d-cta__go">자세히 보기 →</span></a>` : ""}
       </article>`
       )
       .join("");
@@ -390,6 +399,38 @@
       btn.textContent = "복사됨 ✓";
       setTimeout(() => (btn.textContent = "복사"), 1400);
     });
+  });
+
+  /* ---------- 정렬 가능한 표 (헤더 클릭) ---------- */
+  function parseSortVal(s) {
+    s = String(s).trim();
+    const tm = s.match(/(\d+)\s*분\s*(\d+)?/);
+    if (tm) return +tm[1] * 60 + +(tm[2] || 0);
+    const nm = s.replace(/,/g, "").match(/-?\d+(\.\d+)?/);
+    if (nm) return parseFloat(nm[0]);
+    return s.toLowerCase();
+  }
+  document.addEventListener("click", (e) => {
+    const th = e.target.closest(".d-table--sortable th[data-sort]");
+    if (!th) return;
+    const table = th.closest("table");
+    const col = +th.dataset.sort;
+    const tbody = table.querySelector("tbody");
+    const asc = !(table.dataset.sortCol === String(col) && table.dataset.sortDir === "asc");
+    Array.from(tbody.rows)
+      .sort((a, b) => {
+        const x = parseSortVal(a.cells[col].innerText);
+        const y = parseSortVal(b.cells[col].innerText);
+        if (typeof x === "number" && typeof y === "number") return asc ? x - y : y - x;
+        return asc
+          ? String(x).localeCompare(String(y), "ko")
+          : String(y).localeCompare(String(x), "ko");
+      })
+      .forEach((r) => tbody.appendChild(r));
+    table.dataset.sortCol = col;
+    table.dataset.sortDir = asc ? "asc" : "desc";
+    table.querySelectorAll("th[data-sort]").forEach((h) => h.removeAttribute("data-dir"));
+    th.setAttribute("data-dir", asc ? "asc" : "desc");
   });
 
   /* ---------- 차트 렌더 (Chart.js) ---------- */

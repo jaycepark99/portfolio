@@ -509,3 +509,26 @@ a { color: inherit; text-decoration: none; }
   .d-chart__canvas { height: 260px; }
   .d-step { padding: 22px 20px; }
 }
+
+/* 연관 분석 링크 (CTA 박스) */
+.d-cta {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  margin: 20px 0 4px; padding: 16px 20px;
+  border: 1px solid var(--accent); border-radius: 12px; background: var(--accent-bg);
+  color: var(--ink); text-decoration: none; font-weight: 600; line-height: 1.5;
+  transition: background .15s, transform .15s, box-shadow .15s;
+}
+.d-cta:hover { background: #e6eefb; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.d-cta__go { color: var(--accent); white-space: nowrap; font-weight: 700; }
+
+/* 정렬 가능한 표 */
+.d-table--sortable th { padding: 0; }
+.th-sort {
+  width: 100%; background: none; border: 0; cursor: pointer; font: inherit; font-weight: 700;
+  color: inherit; padding: 11px 14px; display: flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.th-sort:hover { color: var(--accent); }
+.th-sort__ico::before { content: "↕"; opacity: .4; font-size: .82em; }
+.d-table--sortable th[data-dir] .th-sort { color: var(--accent); }
+.d-table--sortable th[data-dir="asc"] .th-sort__ico::before { content: "↑"; opacity: 1; }
+.d-table--sortable th[data-dir="desc"] .th-sort__ico::before { content: "↓"; opacity: 1; }

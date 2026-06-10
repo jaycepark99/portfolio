@@ -25,7 +25,7 @@
 
   function buildFocusPreset(fk) {
     const f = byKey(fk) ? fk : "abtest";
-    return { label: "맞춤", featured: f, show: PROJECTS.map((p) => p.key).filter((k) => k !== f) };
+    return { label: "맞춤", featured: f, show: PROJECTS.filter((p) => !p.hidden).map((p) => p.key).filter((k) => k !== f) };
   }
 
   const featuredKey = byKey(preset.featured) ? preset.featured : "abtest";
