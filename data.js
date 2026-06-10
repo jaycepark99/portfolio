@@ -35,7 +35,7 @@ const PRESETS = {
   marketing: { label: "마케팅",          featured: "abtest", show: ["marketing", "rfm", "growth"] },
   serveone:  { label: "구매·운영 데이터·바이브코딩", featured: "abtest", show: ["dashboard", "growth", "trainer"] },
   modoodoc:  { label: "세일즈·운영·실행가", featured: "abtest", show: ["dashboard", "trainer", "growth", "rfm"] },
-  freewillin: { label: "전략기획·데이터 의사결정·바이브코딩", featured: "abtest", show: ["trainer", "dashboard", "growth"] },
+  freewillin: { label: "전략기획·데이터 의사결정·바이브코딩", featured: "abtest", show: ["dashboard", "trainer", "growth"] },
 };
 
 const HERO_STATS = [
