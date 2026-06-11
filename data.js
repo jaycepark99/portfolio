@@ -37,6 +37,7 @@ const PRESETS = {
   modoodoc:  { label: "세일즈·운영·실행가", featured: "abtest", show: ["dashboard", "trainer", "growth", "rfm"] },
   freewillin: { label: "전략기획·데이터 의사결정·바이브코딩", featured: "abtest", show: ["dashboard", "trainer", "growth"] },
   loreal:     { label: "채널 KPI·대시보드·데이터 품질", featured: "abtest", show: ["dashboard", "growth", "trainer", "churn"] },
+  willog:     { label: "경영지표·KPI 대시보드·실행", featured: "abtest", show: ["dashboard", "growth", "trainer"] },
 };
 
 const HERO_STATS = [
