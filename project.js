@@ -12,7 +12,7 @@
       ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const byKey = (k) => PROJECTS.find((p) => p.key === k);
 
-  const PALETTE = ["#2d4a7c", "#3f6bb0", "#6b9bd8", "#a9c5e8", "#cfe0f2"];
+  const PALETTE = ["#1456f0", "#3b82f6", "#6f9cf5", "#a8c2f9", "#d4e2fd"];
   const params = new URLSearchParams(location.search);
   const setParam = params.get("set");           // 조합 유지용
   const setQS = setParam ? `&set=${encodeURIComponent(setParam)}` : "";
@@ -156,7 +156,7 @@
 
   // 색상 보간 (연한 배경 → 진한 accent), t: 0~1
   function lerpColor(t) {
-    const a = [238, 243, 251], b = [45, 74, 124]; // #eef3fb → #2d4a7c
+    const a = [238, 243, 255], b = [20, 86, 240]; // #eef3ff → #1456f0
     const c = a.map((v, i) => Math.round(v + (b[i] - v) * t));
     return `rgb(${c[0]},${c[1]},${c[2]})`;
   }

@@ -9,9 +9,9 @@
   --ink:       #1a1f2b;   /* 본문 */
   --ink-soft:  #5a6473;   /* 보조 텍스트 */
   --line:      #e7eaef;
-  --accent:    #2d4a7c;   /* 딥 인디고 */
-  --accent-2:  #3f6bb0;
-  --accent-bg: #eef3fb;
+  --accent:    #1456f0;   /* 비비드 블루 */
+  --accent-2:  #3b82f6;
+  --accent-bg: #eef3ff;
   --radius:    16px;
   --shadow-sm: 0 1px 2px rgba(26,31,43,.04), 0 2px 8px rgba(26,31,43,.05);
   --shadow-md: 0 6px 24px rgba(26,31,43,.09);
