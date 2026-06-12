@@ -38,6 +38,7 @@ const PRESETS = {
   freewillin: { label: "전략기획·데이터 의사결정·바이브코딩", featured: "abtest", show: ["dashboard", "trainer", "growth"] },
   loreal:     { label: "채널 KPI·대시보드·데이터 품질", featured: "abtest", show: ["dashboard", "growth", "trainer", "churn"] },
   willog:     { label: "경영지표·KPI 대시보드·실행", featured: "abtest", show: ["dashboard", "growth", "trainer"] },
+  jinhak:     { label: "합격예측 모델링·서비스 데이터 분석", featured: "abtest", show: ["churn", "trainer", "growth"] },
 };
 
 const HERO_STATS = [
