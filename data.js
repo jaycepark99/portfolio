@@ -1164,9 +1164,9 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
     key: "trainer",
     domain: "product",
     domainLabel: "바이브코딩·프로덕트",
-    title: "AI 역검 연습 사이트 — 바이브코딩 MVP & 채널·퍼널 분석",
+    title: "AI 역량검사 연습 사이트 — 바이브코딩 MVP & 채널·퍼널 분석",
     summary:
-      "Claude Code 바이브코딩으로 AI 역검 게임 연습 사이트를 직접 만들고, GA4·GTM·UTM과 행동 로그로 800+ 사용자를 분석해 채널 '양 vs 질'·리텐션·학습 효과를 진단한 뒤 제품 개선으로 잇는 풀사이클 — 실사용자 피드백으로 게임 4종 → 9종까지 확장하며 운영 중",
+      "Claude Code 바이브코딩으로 AI 역량검사 게임 연습 사이트를 직접 만들고, GA4·GTM·UTM과 행동 로그로 800+ 사용자를 분석해 채널 '양 vs 질'·리텐션·학습 효과를 진단한 뒤 제품 개선으로 잇는 풀사이클 — 실사용자 피드백으로 게임 4종 → 9종까지 확장하며 운영 중",
     period: "2026.05 ~ (운영 중)",
     type: "개인 프로젝트 · 바이브코딩",
     tools: ["Claude Code", "Vite·React", "Supabase", "Vercel", "GA4·GTM·UTM"],
@@ -1188,7 +1188,7 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
       sections: [
         {
           title: "1. 서비스 — 바이브코딩으로 직접 제작",
-          lead: 'AI가 코드를 쓰되 <span class="hl">제품 판단은 직접</span> — 역검 연습 서비스를 만들어 배포.',
+          lead: 'AI가 코드를 쓰되 <span class="hl">제품 판단은 직접</span> — AI 역량검사 연습 서비스를 만들어 배포.',
           points: [
             "Claude Code로 제작 (Vite·React·Supabase·Vercel) — 게임 4종 → 실사용자 피드백 받아 9종까지 확장, 전 게임 실전모드",
             "개인 통계 대시보드·목표 설정·친구 공유·피드백 창구·SEO/OG 직접 구현",
@@ -1197,7 +1197,7 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
           images: [
             {
               src: "img/jobda-home.png",
-              caption: "직접 제작·배포한 신역검 연습 사이트 — 4종 역검 게임",
+              caption: "직접 제작·배포한 AI 역량검사 연습 사이트 — 4종 게임",
               kind: "capture",
             },
             {
@@ -1315,7 +1315,7 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
           lead: '피드백 → 며칠 안에 배포 → 다시 피드백 — <span class="hl">계속 도는 루프</span>.',
           points: [
             "사용자 요청 반영: 게임 4종 → 9종 확장, 전 게임 실전모드(정답 비공개·제한시간)",
-            "난이도는 실제 역검 경험을 살려 '오르되 중간에 쉬운 문제가 섞이는' 램프로 구현",
+            "난이도는 실제 AI 역량검사 경험을 살려 '오르되 중간에 쉬운 문제가 섞이는' 램프로 구현",
             "익명 피드백 창구(Supabase·도배 방지) + 플레이 데이터 기반 맞춤 피드백(표본 적으면 침묵)",
           ],
           callout:
