@@ -21,6 +21,13 @@
   const proj = byKey(params.get("p")) || PROJECTS[0];
   document.title = `${proj.title} · 박정연 포트폴리오`;
 
+  // CTA로 다른 프로젝트(예: 심층분석)에서 넘어온 경우 — 원래 프로젝트로 돌아가는 링크용
+  const fromProj = params.get("from") ? byKey(params.get("from")) : null;
+  const fromShort = fromProj ? String(fromProj.title).split(/[—·]/)[0].trim() : "";
+  const backToFrom = fromProj
+    ? { href: `project.html?p=${fromProj.key}${setParam ? `&set=${encodeURIComponent(setParam)}` : ""}`, label: `← ${fromShort} 프로젝트로` }
+    : null;
+
   // 프리셋 링크로 들어오면 그 프리셋 안에서만 이전/다음이 순환하도록
   const presetDef =
     setParam && typeof PRESETS !== "undefined" && PRESETS[setParam] && setParam !== DEFAULT_SET
@@ -215,7 +222,7 @@
   const headerHTML = `
     <section class="d-hero">
       <div class="wrap">
-        <a class="d-back" href="${esc(backHref)}">${esc(inPreset ? "← 프로젝트 목록으로" : "← 전체 프로젝트로")}</a>
+        <a class="d-back" href="${esc(backToFrom ? backToFrom.href : backHref)}">${esc(backToFrom ? backToFrom.label : inPreset ? "← 프로젝트 목록으로" : "← 전체 프로젝트로")}</a>
         <div class="d-hero__top">
           <span class="badge">${esc(proj.domainLabel)}</span>
           <span class="d-hero__period">${esc(proj.period)} · ${esc(proj.type)}</span>
@@ -285,6 +292,8 @@
         (s) => `
       <article class="d-step">
         <h3 class="d-step__title">${esc(s.title)}</h3>
+        ${s.lead ? `<p class="d-lead">${s.lead}</p>` : ""}
+        ${s.points ? `<ul class="d-list d-list--pt">${s.points.map((p) => `<li>${p}</li>`).join("")}</ul>` : ""}
         ${bodyText(s.body)}
         ${s.callout ? `<div class="d-callout">${esc(s.callout)}</div>` : ""}
         ${s.callout2 ? `<div class="d-callout d-callout--build">${esc(s.callout2)}</div>` : ""}
@@ -293,7 +302,7 @@
         ${tableHTML(s.table)}
         ${imagesHTML(s)}
         ${codeHTML(s.code)}
-        ${s.cta ? `<a class="d-cta" href="project.html?p=${esc(s.cta.to)}${setQS}"><span class="d-cta__txt">${esc(s.cta.text)}</span><span class="d-cta__go">자세히 보기 →</span></a>` : ""}
+        ${s.cta ? `<a class="d-cta" href="project.html?p=${esc(s.cta.to)}${setQS}&from=${esc(proj.key)}"><span class="d-cta__txt">${esc(s.cta.text)}</span><span class="d-cta__go">자세히 보기 →</span></a>` : ""}
       </article>`
       )
       .join("");
@@ -370,9 +379,16 @@
          <span class="d-pager__dir">${label}</span>
          <span class="d-pager__title">${esc(p.title)}</span>
        </a>`;
+    // CTA로 넘어온 페이지(예: 심층분석)는 '이전 프로젝트' 자리에 원래 프로젝트로 돌아가기를 둔다
+    const prevSlot = backToFrom
+      ? `<a class="d-pager__item d-pager__item--prev" href="${esc(backToFrom.href)}">
+           <span class="d-pager__dir">← 돌아가기</span>
+           <span class="d-pager__title">${esc(fromProj.title)}</span>
+         </a>`
+      : single ? "" : link(prev, "prev", "← 이전 프로젝트");
     return `
       <section class="d-pager wrap">
-        ${single ? "" : link(prev, "prev", "← 이전 프로젝트")}
+        ${prevSlot}
         <a class="d-pager__all" href="${esc(backHref)}">${esc(inPreset ? "목록 보기" : "전체 보기")}</a>
         ${single ? "" : link(next, "next", "다음 프로젝트 →")}
       </section>`;
@@ -388,6 +404,26 @@
     proposalHTML() +
     retroHTML() +
     pagerHTML();
+
+  /* ---------- 결과·회고 한 줄 고정 (넘치면 폰트만 살짝 축소) ---------- */
+  function fitOneLine() {
+    if (window.innerWidth <= 600) return; // 모바일은 자연 줄바꿈
+    $$(".d-list--check li, .d-list--retro li").forEach((li) => {
+      li.style.fontSize = "";
+      let size = parseFloat(getComputedStyle(li).fontSize);
+      const floor = size * 0.8; // 최소 80%까지만 축소
+      let guard = 0;
+      while (li.scrollWidth > li.clientWidth + 1 && size > floor && guard < 60) {
+        size -= 0.5;
+        li.style.fontSize = size + "px";
+        guard++;
+      }
+    });
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitOneLine);
+  fitOneLine();
+  let fitT;
+  window.addEventListener("resize", () => { clearTimeout(fitT); fitT = setTimeout(fitOneLine, 150); });
 
   /* ---------- 코드 하이라이트 + 복사 ---------- */
   if (window.hljs) $$("pre code").forEach((el) => hljs.highlightElement(el));

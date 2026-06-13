@@ -389,6 +389,9 @@ a { color: inherit; text-decoration: none; }
 .d-h3 { font-size: 1rem; font-weight: 700; margin: 24px 0 10px; }
 .d-text { color: var(--ink); font-size: 1rem; line-height: 1.8; margin-bottom: 12px; text-wrap: pretty; }
 @media (max-width: 600px) { .d-text br { display: none; } }  /* 모바일은 고정 줄바꿈 해제 → 자연 흐름 */
+/* 두괄식 결론 줄 — 스캐너가 이 줄만 읽어도 메시지가 잡히게 */
+.d-lead { font-weight: 800; color: var(--ink); font-size: 1.08rem; line-height: 1.5; letter-spacing: -.015em; margin: 2px 0 10px; text-wrap: pretty; }
+.d-lead .hl { color: var(--accent); }
 .d-question {
   font-size: 1.12rem; font-weight: 700; color: var(--accent); line-height: 1.6;
   padding: 16px 22px; border-left: 4px solid var(--accent-2); background: var(--accent-bg);
@@ -407,6 +410,16 @@ a { color: inherit; text-decoration: none; }
 .d-list li::before { content: ""; position: absolute; left: 4px; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-2); }
 .d-list--check li::before { content: "✓"; top: 0; left: 0; width: auto; height: auto; background: none; color: var(--accent); font-weight: 800; }
 .d-list--retro li::before { content: "↺"; top: 0; left: 0; width: auto; height: auto; background: none; color: var(--accent-2); font-weight: 700; }
+/* 분석 섹션 = 결론 헤드라인(d-lead) + 근거 불렛(d-list--pt) */
+.d-list--pt { max-width: 92ch; margin-top: 2px; }
+.d-list--pt li { color: var(--ink); font-size: .98rem; line-height: 1.6; margin-bottom: 8px; }
+.d-list--pt li::before { background: var(--accent-2); top: 11px; }
+.d-list--pt b { font-weight: 700; }
+.d-list--pt .hl { color: var(--accent); font-weight: 700; }
+/* 결과·회고 = 카드와 같은 전체폭 + 한 줄 고정(넘치면 JS가 폰트만 살짝 축소) */
+.d-list--check, .d-list--retro { max-width: none; }
+.d-list--check li, .d-list--retro li { white-space: nowrap; }
+@media (max-width: 600px) { .d-list--check li, .d-list--retro li { white-space: normal; } }  /* 모바일은 줄바꿈 허용 */
 
 /* 분석 과정 스텝 */
 .d-steps { display: flex; flex-direction: column; gap: 34px; }
