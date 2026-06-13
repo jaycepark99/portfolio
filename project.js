@@ -12,9 +12,15 @@
       ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const byKey = (k) => PROJECTS.find((p) => p.key === k);
 
-  const PALETTE = ["#1456f0", "#3b82f6", "#6f9cf5", "#a8c2f9", "#d4e2fd"];
   const params = new URLSearchParams(location.search);
   const setParam = params.get("set");           // 조합 유지용
+  // 회사별 색 테마(예: modoodoc=퍼플) — 해당 data-theme의 CSS가 있을 때만 적용됨
+  if (setParam && typeof PRESETS !== "undefined" && PRESETS[setParam] && setParam !== DEFAULT_SET)
+    document.documentElement.setAttribute("data-theme", setParam);
+  // 차트 팔레트도 테마에 맞춰 분기(차트 색은 JS에서 그려 CSS 변수를 못 받음)
+  const PALETTE = setParam === "modoodoc"
+    ? ["#5307B0", "#7F4FDF", "#9d72e8", "#c0a6f2", "#e6dafa"]
+    : ["#1456f0", "#3b82f6", "#6f9cf5", "#a8c2f9", "#d4e2fd"];
   const setQS = setParam ? `&set=${encodeURIComponent(setParam)}` : "";
   const backHref = "index.html" + (setParam ? `?set=${encodeURIComponent(setParam)}` : "") + "#projects";
 
@@ -163,7 +169,9 @@
 
   // 색상 보간 (연한 배경 → 진한 accent), t: 0~1
   function lerpColor(t) {
-    const a = [238, 243, 255], b = [20, 86, 240]; // #eef3ff → #1456f0
+    // 모두닥 테마면 퍼플(#F3ECFC→#5307B0), 아니면 블루(#eef3ff→#1456f0)
+    const a = setParam === "modoodoc" ? [243, 236, 252] : [238, 243, 255];
+    const b = setParam === "modoodoc" ? [83, 7, 176]    : [20, 86, 240];
     const c = a.map((v, i) => Math.round(v + (b[i] - v) * t));
     return `rgb(${c[0]},${c[1]},${c[2]})`;
   }

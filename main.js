@@ -22,6 +22,8 @@
       : PRESETS[setKey] || PRESETS[DEFAULT_SET];
   const isDefaultView = !setKey || setKey === DEFAULT_SET;
   const setQS = !isDefaultView && PRESETS[setKey] ? `&set=${encodeURIComponent(setKey)}` : "";
+  // 회사별 색 테마(예: modoodoc=퍼플) — 해당 data-theme의 CSS가 있을 때만 적용됨
+  if (!isDefaultView && PRESETS[setKey]) document.documentElement.setAttribute("data-theme", setKey);
 
   function buildFocusPreset(fk) {
     const f = byKey(fk) ? fk : "abtest";

@@ -19,6 +19,13 @@
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
+/* 회사별 테마 — ?set=modoodoc 일 때만 모두닥 퍼플. 기본·다른 프리셋은 블루 유지 */
+html[data-theme="modoodoc"] {
+  --accent:    #5307B0;
+  --accent-2:  #7F4FDF;
+  --accent-bg: #F3ECFC;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 body {
