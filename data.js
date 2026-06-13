@@ -1052,11 +1052,11 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
     domainLabel: "바이브코딩·프로덕트",
     title: "AI 역검 연습 사이트 — 바이브코딩 MVP & 채널·퍼널 분석",
     summary:
-      "Claude Code 바이브코딩으로 AI 역검 게임 연습 사이트를 직접 만들고, GA4·GTM·UTM과 행동 로그로 250+ 사용자를 분석해 채널 '양 vs 질'·리텐션·학습 효과를 진단한 뒤 제품 개선으로 잇는 풀사이클 — 실사용자 피드백으로 게임 4종 → 9종까지 확장하며 운영 중",
+      "Claude Code 바이브코딩으로 AI 역검 게임 연습 사이트를 직접 만들고, GA4·GTM·UTM과 행동 로그로 800+ 사용자를 분석해 채널 '양 vs 질'·리텐션·학습 효과를 진단한 뒤 제품 개선으로 잇는 풀사이클 — 실사용자 피드백으로 게임 4종 → 9종까지 확장하며 운영 중",
     period: "2026.05 ~ (운영 중)",
     type: "개인 프로젝트 · 바이브코딩",
     tools: ["Claude Code", "Vite·React", "Supabase", "Vercel", "GA4·GTM·UTM"],
-    metric: { value: "250+", label: "멀티채널 유입 사용자" },
+    metric: { value: "800+", label: "멀티채널 활성 사용자" },
     chip: "바이브코딩 MVP · 채널·퍼널 분석",
     links: [
       { label: "🎮 사이트 체험하기", url: "https://jobda-trainer.vercel.app/?utm_source=portfolio&utm_medium=referral&utm_campaign=resume" },
@@ -1067,8 +1067,8 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
       question: "어느 채널이 진짜 몰입하는 유저를 데려오는가? 유입량(방문자 수)만 보면 될까?",
       data: {
         source: "직접 제작·운영하는 웹 서비스 (jobda-trainer.vercel.app)",
-        period: "2026.05 ~ (운영 중) · 데이터 매주 1회 갱신 (2026.06.08 기준)",
-        scale: "GA4 250+ 사용자 · 10,983 이벤트 · UTM 멀티채널 (링커리어·에브리타임·네이버·인스타·티스토리) — 유입 계속 증가 중",
+        period: "2026.05 ~ (운영 중) · 데이터 매주 1회 갱신 (2026.06.13 기준)",
+        scale: "GA4 활성 사용자 810 · 활성 사용자당 평균 참여 16분 27초 · UTM 멀티채널 (링커리어·에브리타임·네이버·인스타·티스토리) — 유입 계속 증가 중",
         preprocessing: [],
       },
       sections: [
@@ -1177,7 +1177,7 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
         },
       ],
       resultStats: [
-        { value: "250+", label: "멀티채널 유입 사용자" },
+        { value: "800+", label: "멀티채널 활성 사용자" },
         { value: "81.8%", label: "재플레이율 — 세션당 평균 11회" },
         { value: "+20점", label: "반복 연습 시 점수 향상 (74% 개선)" },
       ],
