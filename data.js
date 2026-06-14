@@ -1166,7 +1166,7 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
     domainLabel: "바이브코딩·프로덕트",
     title: "AI 역량검사 연습 사이트 — 바이브코딩 MVP & 채널·퍼널 분석",
     summary:
-      "Claude Code 바이브코딩으로 AI 역량검사 게임 연습 사이트를 직접 만들고, GA4·GTM·UTM과 행동 로그로 800+ 사용자를 분석해 채널 '양 vs 질'·리텐션·학습 효과를 진단한 뒤 제품 개선으로 잇는 풀사이클 — 실사용자 피드백으로 게임 4종 → 9종까지 확장하며 운영 중",
+      "Claude Code 바이브코딩으로 AI 역량검사 게임 연습 사이트를 직접 만들고, GA4·GTM·UTM과 행동 로그로 800+ 사용자를 분석해 채널 '양 vs 질'·리텐션·학습 효과를 진단한 뒤 서비스 개선으로 잇는 풀사이클 — 실사용자 피드백으로 게임 4종 → 9종까지 확장하며 운영 중",
     period: "2026.05 ~ (운영 중)",
     type: "개인 프로젝트 · 바이브코딩",
     tools: ["Claude Code", "Vite·React", "Supabase", "Vercel", "GA4·GTM·UTM"],
@@ -1188,7 +1188,7 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
       sections: [
         {
           title: "1. 서비스 — 바이브코딩으로 직접 제작",
-          lead: 'AI가 코드를 쓰되 <span class="hl">제품 판단은 직접</span> — AI 역량검사 연습 서비스를 만들어 배포.',
+          lead: 'AI가 코드를 쓰되 <span class="hl">서비스 방향은 직접</span> — AI 역량검사 연습 서비스를 만들어 배포.',
           points: [
             "Claude Code로 제작 (Vite·React·Supabase·Vercel) — 게임 4종 → 실사용자 피드백 받아 9종까지 확장, 전 게임 실전모드",
             "개인 통계 대시보드·목표 설정·친구 공유·피드백 창구·SEO/OG 직접 구현",
@@ -1302,8 +1302,8 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
           },
         },
         {
-          title: "6. 개선 — 분석을 다시 제품으로 (실제 배포)",
-          lead: '분석을 <span class="hl">제품 개선으로 되돌려 실제 배포</span> — 만들고·측정·분석·개선 한 바퀴.',
+          title: "6. 개선 — 분석을 다시 서비스로 (실제 배포)",
+          lead: '분석을 <span class="hl">서비스 개선으로 되돌려 실제 배포</span> — 만들고·측정·분석·개선 한 바퀴.',
           points: [
             "리텐션: 결과 화면에 '지난 판 +N점·개인 최고·2번째 판 넛지·연속 출석' → 재플레이 유도",
             "유입: 공유 버튼에 UTM(source=share) → (direct)로 묻히던 바이럴 측정 가능",
