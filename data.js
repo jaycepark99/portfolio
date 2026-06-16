@@ -278,7 +278,7 @@ print(f"ARPU uplift +25.7%, p={p2:.3f}")`,
     period: "2025.01 ~ 2026.01",
     type: "개인 프로젝트",
     tools: ["SQL", "Tableau", "Looker Studio", "Google Sheets"],
-    metric: { value: "83%↓", label: "주간 집계 시간" },
+    metric: { value: "98%↓", label: "집계 시간 (주 2h → 월 10분)" },
     chip: "KPI 대시보드 · 데이터 정합성",
     detail: {
       objective:
@@ -370,12 +370,12 @@ WHERE amount > 0;          -- 결측/이상치 제거`,
         },
       ],
       resultStats: [
-        { value: "83%↓", label: "주간 집계 시간 (2h→20m)" },
+        { value: "98%↓", label: "집계 시간 (주 2h → 월 10분)" },
         { value: "5.7만 건", label: "통합 POS 데이터" },
         { value: "3개 지점", label: "실시간 트래킹" },
       ],
       results: [
-        "주 2시간 수기 집계 → 주 20분, 약 83% 단축 (웹 대시보드 후 월 10분)",
+        "주 2시간 수기 집계 → 월 10분, 약 98% 단축 (BI 단계 주 20분 83%↓ 경유)",
         "피크타임 식별 → 청소·점검 스케줄 최적화",
         "지점별 비용구조 차이 식별 → 비용 절감 우선순위·매출 목표 차등 설정",
       ],
@@ -808,7 +808,7 @@ X[['Education_Level','Income_Category']] = ordinal.fit_transform(
           ],
           image: {
             src: "img/churn-ltv-scatter.png",
-            caption: "LTV vs 이탈확률 (색 = LTV 5등급). 우상단 = 우량 고객이지만 이탈 위험 → 우선 방어 대상 (* 코드상 변수명 CLV = LTV)",
+            caption: "LTV vs 이탈확률 (색 = LTV 5등급). 우상단 = 우량 고객이지만 이탈 위험 → 우선 방어 대상 (그래프 축 라벨 CLV는 LTV와 동일)",
             kind: "capture",
           },
           code: {
