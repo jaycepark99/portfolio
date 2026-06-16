@@ -681,11 +681,11 @@ WHERE invoice_no NOT LIKE 'C%'     -- 취소건 제거
     domain: "ml",
     domainLabel: "금융·머신러닝",
     title: "신용카드 고객 이탈 예측 및 LTV 분석",
-    summary: "RandomForest 이탈 예측 모델(정확도 96%)을 구축하고, LTV 기반 5등급 세분화로 등급별 맞춤 방어 전략을 설계",
+    summary: "이탈 예측 모델(정확도 96%·ROC-AUC 0.987)을 해석 가능한 규칙으로 번역하고, LTV 5등급 세분화로 등급별 차등 방어 전략을 설계해 이탈률 52.7% 감소(기대)로 연결",
     period: "2024.08 ~ 2024.09",
     type: "팀 프로젝트 (5인 · 리더)",
     tools: ["Python", "RandomForest", "Decision Tree", "LTV"],
-    metric: { value: "96%", label: "이탈 예측 정확도" },
+    metric: { value: "52.7%↓", label: "이탈률 감소 (등급별 방어·기대)" },
     chip: "거래 데이터 모델링 · LTV",
     detail: {
       objective:
@@ -849,10 +849,10 @@ df['LTV_grade'] = pd.qcut(df['LTV'], q=[0,.10,.50,.80,.95,1.0],
         },
       ],
       resultStats: [
+        { value: "-52.7%", label: "평균 이탈률 감소 (등급별 방어·기대)" },
+        { value: "$82,372", label: "고객당 추가 이익 (기대)" },
         { value: "96%", label: "예측 정확도 (RandomForest)" },
         { value: "0.987", label: "ROC-AUC" },
-        { value: "-52.7%", label: "평균 이탈률 감소 (예상)" },
-        { value: "$82,372", label: "고객당 추가 이익 (예상)" },
       ],
       results: [
         "RandomForest 정확도 96%(Precision 0.92·Recall 0.81)·ROC-AUC 0.987로 높은 분리력",
