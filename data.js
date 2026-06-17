@@ -44,8 +44,8 @@ const PRESETS = {
 
 const HERO_STATS = [
   { value: "+25.7%", label: "A/B 테스트 1인당 매출 개선" },
-  { value: "96%", label: "이탈 예측 모델 정확도" },
-  { value: "83%", label: "운영 집계 시간 단축" },
+  { value: "74%", label: "이탈자가 '저수익' 고객 (수익 진단)" },
+  { value: "98%", label: "운영 집계 시간 단축" },
   { value: "+95%", label: "이커머스 연 매출 성장 진단" },
 ];
 
@@ -335,7 +335,7 @@ WHERE amount > 0;          -- 결측/이상치 제거`,
             "Looker Studio(Sheets 동기화)로 전환 → 일일 입력만으로 현황 수시 확인",
           ],
           callout:
-            "💡 수기 집계 주 2시간 → 자동화 후 주 20분. 약 83% 단축 + 데이터 누락 리스크 제거.",
+            "💡 수기 주 2시간 → BI 주 20분(83%↓) → 자체 웹 월 10분(최종 98%↓) + 데이터 누락 리스크 제거.",
         },
         {
           title: "3. BI 도구로 시각화 — Tableau · Looker Studio",
@@ -685,7 +685,7 @@ WHERE invoice_no NOT LIKE 'C%'     -- 취소건 제거
     period: "2024.08 ~ 2024.09",
     type: "팀 프로젝트 (5인 · 리더)",
     tools: ["Python", "RandomForest", "Decision Tree", "고객 수익 세분화"],
-    metric: { value: "0.987", label: "ROC-AUC (이탈 예측·배포용 스코어링)" },
+    metric: { value: "74%", label: "이탈자가 '저수익(완납·소액)' 고객 (수익 진단)" },
     chip: "거래 데이터 모델링 · 수익 가치",
     detail: {
       objective:
