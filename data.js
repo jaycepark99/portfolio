@@ -1170,7 +1170,7 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
     period: "2026.05 ~ (운영 중)",
     type: "개인 프로젝트 · 바이브코딩",
     tools: ["Claude Code", "Vite·React", "Supabase", "Vercel", "GA4·GTM·UTM"],
-    metric: { value: "800+", label: "멀티채널 활성 사용자" },
+    metric: { value: "3,000+", label: "멀티채널 활성 사용자 (6월 기준)" },
     chip: "바이브코딩 MVP · 운영·개선 루프",
     links: [
       { label: "🎮 사이트 체험하기", url: "https://jobda-trainer.vercel.app/?utm_source=portfolio&utm_medium=referral&utm_campaign=resume" },
@@ -1181,8 +1181,8 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
       question: "내가 겪은 불편을 직접 서비스로 만들어, 데이터로 검증하며 계속 키울 수 있을까?",
       data: {
         source: "직접 제작·운영하는 웹 서비스 (jobda-trainer.vercel.app)",
-        period: "2026.05 ~ (운영 중) · 데이터 2026.06 기준 (운영하며 계속 갱신)",
-        scale: "GA4 활성 사용자 800+ · 활성 사용자당 평균 참여 16분 27초 · UTM 멀티채널 (링커리어·에브리타임·네이버·인스타·티스토리) — 유입 계속 증가 중",
+        period: "2026.05 ~ (운영 중) · 데이터 2026.06.17 기준",
+        scale: "GA4 활성 사용자 3,000+(런칭 이후 누적) · 활성 사용자당 평균 참여 16분 56초 · UTM 멀티채널 (링커리어·에브리타임·네이버·인스타·티스토리) — 6/14~17 급증, 계속 갱신",
         preprocessing: [],
       },
       sections: [
@@ -1294,12 +1294,12 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
         },
       ],
       resultStats: [
-        { value: "800+", label: "멀티채널 활성 사용자" },
+        { value: "3,000+", label: "멀티채널 활성 사용자 (6월 기준)" },
         { value: "79%", label: "재플레이율 — 세션당 평균 13회" },
         { value: "+27점", label: "반복 연습 시 점수 향상 (89% 개선)" },
       ],
       results: [
-        "AI 역량검사를 직접 준비하다 느낀 불편을 바이브코딩으로 서비스화 — 게임 4종→9종, 800+ 사용자 운영 중",
+        "AI 역량검사를 직접 준비하다 느낀 불편을 바이브코딩으로 서비스화 — 게임 4종→9종, 3,000+ 사용자 운영 중(6월 기준)",
         "결과를 주장하기 전에 측정부터: GA4·GTM·UTM + 6단계 퍼널로 채널·콘텐츠·행동을 코드 수정 없이 추적",
         "행동 로그 5,363건: 재플레이 79%·세션당 13회·재방문 26% — 고착도는 충분, 병목은 유입",
         "반복 시 +27점(89%)·첫 점수 낮은 층이 17.8회 최다 연습 — 레버는 '향상 가시화'(시작한 게임은 대부분 완주)",
