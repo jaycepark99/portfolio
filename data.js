@@ -903,7 +903,7 @@ df['value_tier'] = pd.qcut(df['est_revenue'], q=[0,.10,.50,.80,.95,1.0],
           points: [
             "약물쌍 SMILES를 RDKit으로 분자화 → PyBioMed로 descriptor 추출",
             "CYP450 효소(12종) 벡터 원소곱으로 상호작용 feature 생성 (약 67,317 페어)",
-            "핵심 이슈는 19개 클래스 간 심한 불균형 · EDA상 효소 2D6·2C19 중요도 최상위",
+            "핵심 이슈는 19개 클래스 간 심한 불균형(19개 중 7개만 1,000쌍↑) · EDA상 효소 2D6·2C19 중요도 최상위 → 히스타민 길항제 관련 DDI에 핵심임을 시사",
           ],
           code: {
             lang: "python",
@@ -962,7 +962,7 @@ df['interaction_features'] = df.apply(
           title: "4. 성능 고도화 — 튜닝 + SMOTE",
           lead: '<span class="hl">불균형 처리(SMOTE)가 결정타</span> — 정확도 0.75 → 0.92.',
           points: [
-            "Base 0.75 → GridSearch 튜닝 0.80 → SMOTE 적용 0.92",
+            "Base 0.75 → GridSearch 튜닝 0.80 → SMOTE 적용 0.92 (정확도뿐 아니라 Precision 0.85·Recall 0.88·F1 0.90)",
             "클래스 불균형 해결이 성능 향상의 결정적 지점",
           ],
           chart: {
@@ -1005,10 +1005,29 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
           lead: 'Top 5 유형 평균 <span class="hl">F1 0.98</span> · 기존 연구 대비 Precision +14%.',
           points: [
             "주요 DDI 유형(Top 5) 평균 F1 0.98 · Class 13·15는 F1 0.99",
-            "기존 연구 대비 Precision +14% → 더 신뢰도 높은 안전성 정보 제공",
+            "기존 연구 대비 Precision +14%·Recall +11% · 실제 약물 '지프라시돈' 상호작용 예측 성공으로 실용성 입증",
           ],
           callout:
             "💡 초기 단계에서 잠재 상호작용을 예측 → 임상 실패 비용 최소화 + 후보 물질 스크리닝 가속, 부작용 리스크 사전 차단",
+        },
+        {
+          title: "7. 일반화 검증 — 비승인(미지) 약물 셋",
+          lead: '학습셋 0.92 vs <span class="hl">비승인 약물 검증셋 F1 ~0.6</span> — 일반화 한계를 정직하게.',
+          points: [
+            "92%는 학습/테스트(SMOTE 균형) 기준 — 한 번도 안 본 비승인 약물엔 F1이 0.6대로 하락",
+            "샘플 많은 Class 3(570쌍)·Class 4(670쌍)는 F1 0.59~0.64로 상대적 신뢰 / 샘플 적은 Class 17(10쌍)은 0.38로 불안정",
+            "→ '아는 유형'엔 강하나 신약 일반화는 별도 — 표본 보강 + 도메인 특화(2D6·2C19)가 다음 과제",
+          ],
+          table: {
+            headers: ["DDI 유형", "Precision", "Recall", "F1", "약물쌍"],
+            rows: [
+              ["Class 4", "0.65", "0.67", "0.59", "670"],
+              ["Class 3", "0.73", "0.57", "0.64", "570"],
+              ["Class 6", "0.71", "0.73", "0.60", "165"],
+              ["Class 17", "0.46", "0.45", "0.38", "10"],
+              ["Class 15", "0.68", "0.75", "0.65", "7"],
+            ],
+          },
         },
       ],
       resultStats: [
@@ -1026,7 +1045,7 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
         { title: "안전성 정보 강화", desc: "Precision 향상분을 활용해 부작용 리스크 사전 경고 체계에 반영" },
       ],
       retro: [
-        "SMOTE로 불균형은 해결했으나, 소수 클래스의 실제 분포 대표성은 추가 검증 필요",
+        "학습 0.92 vs 비승인 약물 검증 F1 ~0.6 — '아는 유형'엔 강하나 신약 일반화는 표본·도메인 특화(2D6·2C19) 보강 필요(SMOTE 균형 효과도 감안)",
         "특성 94개 선택이 성능과 속도의 균형점이었는지, 다른 누적 기준(90/97%)과 비교했으면 더 좋았을 것",
       ],
     },
