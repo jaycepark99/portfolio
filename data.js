@@ -40,6 +40,7 @@ const PRESETS = {
   willog:     { label: "경영지표·KPI 대시보드·실행", featured: "abtest", show: ["dashboard", "growth", "trainer"] },
   jinhak:     { label: "합격예측 모델링·서비스 데이터 분석", featured: "abtest", show: ["churn", "trainer", "growth"] },
   codeit:     { label: "이탈 예측·통계·학습 데이터 분석·바이브코딩", featured: "churn", show: ["trainer", "abtest", "dashboard"] },
+  woowa:      { label: "운영 지표 분석·이탈/수급·실험", featured: "abtest", show: ["dashboard", "churn", "growth", "trainer"] },
 };
 
 const HERO_STATS = [
