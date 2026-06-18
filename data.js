@@ -41,6 +41,7 @@ const PRESETS = {
   jinhak:     { label: "합격예측 모델링·서비스 데이터 분석", featured: "abtest", show: ["churn", "trainer", "growth"] },
   codeit:     { label: "이탈 예측·통계·학습 데이터 분석·바이브코딩", featured: "churn", show: ["trainer", "abtest", "dashboard"] },
   woowa:      { label: "운영 지표 분석·이탈/수급·실험", featured: "abtest", show: ["dashboard", "churn", "growth", "trainer"] },
+  musinsa:    { label: "바이브코딩·AI 모델 평가·골든셋·실험", featured: "trainer", show: ["churn", "ddi", "abtest"] },
 };
 
 const HERO_STATS = [
