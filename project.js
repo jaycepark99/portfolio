@@ -20,6 +20,8 @@
   // 차트 팔레트도 테마에 맞춰 분기(차트 색은 JS에서 그려 CSS 변수를 못 받음)
   const PALETTE = setParam === "modoodoc"
     ? ["#5307B0", "#7F4FDF", "#9d72e8", "#c0a6f2", "#e6dafa"]
+    : setParam === "codeit"
+    ? ["#A64DFF", "#C58CFF", "#d9b8ff", "#e8d4ff", "#f4ebff"]
     : ["#1456f0", "#3b82f6", "#6f9cf5", "#a8c2f9", "#d4e2fd"];
   const setQS = setParam ? `&set=${encodeURIComponent(setParam)}` : "";
   const backHref = "index.html" + (setParam ? `?set=${encodeURIComponent(setParam)}` : "") + "#projects";
@@ -169,9 +171,11 @@
 
   // 색상 보간 (연한 배경 → 진한 accent), t: 0~1
   function lerpColor(t) {
-    // 모두닥 테마면 퍼플(#F3ECFC→#5307B0), 아니면 블루(#eef3ff→#1456f0)
-    const a = setParam === "modoodoc" ? [243, 236, 252] : [238, 243, 255];
-    const b = setParam === "modoodoc" ? [83, 7, 176]    : [20, 86, 240];
+    // 테마별 히트맵 색: 모두닥 퍼플 / 코드잇 바이올렛(#F4EBFF→#A64DFF) / 기본 블루
+    const ramp = setParam === "modoodoc" ? [[243, 236, 252], [83, 7, 176]]
+               : setParam === "codeit"   ? [[244, 235, 255], [166, 77, 255]]
+               :                           [[238, 243, 255], [20, 86, 240]];
+    const [a, b] = ramp;
     const c = a.map((v, i) => Math.round(v + (b[i] - v) * t));
     return `rgb(${c[0]},${c[1]},${c[2]})`;
   }

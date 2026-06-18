@@ -19,11 +19,17 @@
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-/* 회사별 테마 — ?set=modoodoc 일 때만 모두닥 퍼플. 기본·다른 프리셋은 블루 유지 */
+/* 회사별 테마 — 해당 프리셋일 때만 색 교체. 기본·다른 프리셋은 블루 유지 */
 html[data-theme="modoodoc"] {
   --accent:    #5307B0;
   --accent-2:  #7F4FDF;
   --accent-bg: #F3ECFC;
+}
+/* ?set=codeit — 코드잇 포트폴리오 덱과 동일한 바이올렛(#A64DFF) */
+html[data-theme="codeit"] {
+  --accent:    #A64DFF;
+  --accent-2:  #C58CFF;
+  --accent-bg: #F4EBFF;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
