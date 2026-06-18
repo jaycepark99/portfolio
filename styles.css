@@ -31,6 +31,21 @@ html[data-theme="codeit"] {
   --accent-2:  #C58CFF;
   --accent-bg: #F4EBFF;
 }
+/* ?set=woowa — 우아한청년들: 포인트 색 민트 #06EFD3.
+   민트는 흰 배경 텍스트로 대비가 약해(가독성↓), 포인트(--accent-2)·버튼·도트로만 쓰고
+   본문/작은 텍스트는 같은 계열 딥 틸(--accent)로 읽히게 한다. */
+html[data-theme="woowa"] {
+  --accent:    #0A7A6C;   /* 딥 틸 — 텍스트·작은 요소(가독용) */
+  --accent-2:  #06EFD3;   /* 포인트 민트 — 강조·도트·그라데이션 */
+  --accent-bg: #E3FDF8;
+}
+/* 가장 눈에 띄는 버튼은 포인트 민트로 채우고 글자는 딥 틸(흰 글자는 민트 위 대비 부족) */
+html[data-theme="woowa"] .nav__cta { background: #06EFD3; color: #063A33 !important; }
+html[data-theme="woowa"] .nav__cta:hover { background: #04D9C0; color: #063A33 !important; }
+html[data-theme="woowa"] .btn--primary { background: #06EFD3; color: #063A33; }
+html[data-theme="woowa"] .btn--primary:hover { background: #04D9C0; color: #063A33; }
+/* featured 카드 사이드 그라데이션: 민트 끝에서 흰 글자가 묻히지 않게 딥 틸→중간 틸로 */
+html[data-theme="woowa"] .card--featured .card__side { background: linear-gradient(160deg, #0A7A6C 0%, #0FB8A4 100%); }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
