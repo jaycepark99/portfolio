@@ -1219,7 +1219,7 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
           images: [
             {
               src: "img/jobda-home.png",
-              caption: "직접 제작·배포한 AI 역량검사 연습 사이트 — 4종 게임",
+              caption: "직접 제작·배포한 AI 역량검사 연습 사이트 — 게임 9종",
               kind: "capture",
             },
             {
