@@ -1230,12 +1230,12 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
           ],
         },
         {
-          title: "2. 측정 — GA4·GTM·UTM 계측 인프라",
-          lead: '결과를 주장하기 전에 <span class="hl">측정부터 깔았다</span> — GA4·GTM·UTM + 6단계 퍼널.',
+          title: "2. 측정 — 웹(GA4·UTM) + 인게임(Supabase) 두 축",
+          lead: '결과를 주장하기 전에 <span class="hl">측정부터 깔았다</span> — 웹 유입은 GA4·GTM·UTM, 인게임 플레이는 Supabase 로그.',
           points: [
-            "GA4를 GTM으로 연결 → 코드 수정 없이 클릭·이벤트·SPA page_view 추적",
-            "외부 링크에 UTM(source·medium·campaign·content) 설계 → 채널·콘텐츠·위치별 유입 구분",
-            "퍼널 정의: 진입 → 게임 페이지 → 시작 → 완료 → 목표 설정 → 달성",
+            "GA4를 GTM으로 연결 → 코드 수정 없이 클릭·이벤트·SPA page_view 추적, UTM으로 채널·콘텐츠 구분, 6단계 퍼널 정의(진입→게임→시작→완료→목표→달성)",
+            "게임 플레이·행동 로그(5,363건)는 <b>Supabase에 직접 적재</b> → 재플레이·N-back 학습곡선·게임별 완료율을 SQL로 쿼리·분석",
+            "즉 GA4(웹 계측) + Supabase(인게임 데이터) 두 축을 직접 깔아 — '내가 만든 서비스의 데이터'를 처음부터 끝까지 직접 수집·분석",
           ],
           cta: {
             to: "channel-device",
