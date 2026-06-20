@@ -52,6 +52,12 @@ html[data-theme="musinsa"] {
   --accent-2:  #5a6473;   /* 보조 — 도트·세컨더리(무채색) */
   --accent-bg: #f2f3f5;
 }
+/* ?set=danggeun — 당근 브랜드 주황(#FF6F0F). 강조=주황, 보조=밝은 주황 */
+html[data-theme="danggeun"] {
+  --accent:    #FF6F0F;   /* 당근 주황 — 텍스트·버튼·featured·차트 강조 */
+  --accent-2:  #FF9450;   /* 보조 — 도트·그라데이션 */
+  --accent-bg: #FFF2E8;
+}
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }

@@ -42,6 +42,7 @@ const PRESETS = {
   codeit:     { label: "이탈 예측·통계·학습 데이터 분석·바이브코딩", featured: "churn", show: ["trainer", "abtest", "dashboard"] },
   woowa:      { label: "운영 지표 분석·이탈/수급·실험", featured: "abtest", show: ["dashboard", "churn", "growth", "trainer"] },
   musinsa:    { label: "바이브코딩·AI 모델 평가·실험·대시보드 자동화", featured: "trainer", show: ["churn", "abtest", "dashboard"] },
+  danggeun:   { label: "현장 운영 개선·VOC·자동화·AI 빌드", featured: "abtest", show: ["dashboard", "trainer", "growth"] },
 };
 
 const HERO_STATS = [
