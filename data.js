@@ -1192,7 +1192,7 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
     period: "2026.05 ~ (운영 중)",
     type: "개인 프로젝트 · 바이브코딩",
     tools: ["Claude Code", "Vite·React", "Supabase", "Vercel", "GA4·GTM·UTM"],
-    metric: { value: "5,000+", label: "멀티채널 활성 사용자 (배포 약 3주 만에)" },
+    metric: { value: "5,000+", label: "활성 사용자 (배포 약 3주 만에)" },
     chip: "바이브코딩 MVP · 운영·개선 루프",
     links: [
       { label: "🎮 사이트 체험하기", url: "https://jobda-trainer.vercel.app/?utm_source=portfolio&utm_medium=referral&utm_campaign=resume" },
@@ -1272,7 +1272,7 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
         },
       ],
       resultStats: [
-        { value: "5,000+", label: "멀티채널 활성 사용자 (배포 약 3주 만에)" },
+        { value: "5,000+", label: "활성 사용자 (배포 약 3주 만에)" },
         { value: "79%", label: "재플레이율 — 세션당 평균 13회" },
         { value: "+27점", label: "반복 연습 시 점수 향상 (89% 개선)" },
       ],
