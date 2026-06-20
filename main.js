@@ -54,7 +54,7 @@
   $("#heroStats").innerHTML = heroStats
     .map(
       (s) =>
-        `<li><span class="num">${esc(s.value)}</span><span class="cap">${esc(s.label)}</span></li>`
+        `<li><span class="num">${esc(s.value)}</span><span class="cap">${esc(s.label).replace(/ \(/g, "<br>(")}</span></li>`
     )
     .join("");
 
