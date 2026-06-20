@@ -282,7 +282,7 @@ print(f"ARPU uplift +25.7%, p={p2:.3f}")`,
     period: "2025.01 ~ 2026.01",
     type: "직접 운영하는 매장 · 실데이터",
     tools: ["SQL", "Tableau", "Looker Studio", "Google Sheets"],
-    metric: { value: "98%↓", label: "집계 시간 (주 2h → 월 10분)" },
+    metric: { value: "98%↓", label: "집계 시간\n(주 2h → 월 10분)" },
     chip: "KPI 대시보드 · 데이터 정합성",
     detail: {
       objective:
@@ -1192,7 +1192,7 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
     period: "2026.05 ~ (운영 중)",
     type: "개인 프로젝트 · 바이브코딩",
     tools: ["Claude Code", "Vite·React", "Supabase", "Vercel", "GA4·GTM·UTM"],
-    metric: { value: "5,000+", label: "활성 사용자 (배포 약 3주 만에)" },
+    metric: { value: "5,000+", label: "활성 사용자\n(배포 약 3주 만에)" },
     chip: "바이브코딩 MVP · 운영·개선 루프",
     links: [
       { label: "🎮 사이트 체험하기", url: "https://jobda-trainer.vercel.app/?utm_source=portfolio&utm_medium=referral&utm_campaign=resume" },
