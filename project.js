@@ -413,8 +413,19 @@
   }
 
   /* ---------- 조립 ---------- */
+  const metricTabsBlock = d.metricTabs ? `
+    <section class="d-section wrap">
+      <h2 class="d-h2">${esc(d.metricTabs.title)}</h2>
+      <div class="d-mtabs__head">
+        ${d.metricTabs.tabs.map((t,i)=>`<button class="d-mtab${i===0?" is-on":""}" data-i="${i}"><span class="d-mtab__v">${esc(t.value)}</span><span class="d-mtab__k">${esc(t.key)}</span></button>`).join("")}
+      </div>
+      <div class="d-chart"><div class="d-chart__canvas"><canvas id="metricChart"></canvas></div></div>
+      ${d.metricTabs.caption ? `<p class="d-chart__cap">${esc(d.metricTabs.caption)}</p>` : ""}
+    </section>` : "";
+
   $("#projectRoot").innerHTML =
     headerHTML +
+    metricTabsBlock +
     objectiveHTML +
     dataHTML() +
     sectionsHTML() +
@@ -599,6 +610,27 @@
     });
   }
   chartSpecs.forEach(makeChart);
+
+  /* ---------- 인터랙티브 지표 탭 (GA4 개요 스타일) ---------- */
+  if (d.metricTabs) {
+    const mt = d.metricTabs, cv = document.getElementById("metricChart");
+    if (cv && window.Chart) {
+      const accent = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#1456f0";
+      const mchart = new Chart(cv, {
+        type: "line",
+        data: { labels: mt.labels, datasets: [{ label: mt.tabs[0].key, data: mt.tabs[0].data, borderColor: accent, backgroundColor: "transparent", borderWidth: 2, tension: 0.3, pointRadius: 2, pointHoverRadius: 4 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } },
+      });
+      $$(".d-mtab").forEach((btn) => btn.addEventListener("click", () => {
+        const i = +btn.dataset.i;
+        $$(".d-mtab").forEach((b) => b.classList.remove("is-on"));
+        btn.classList.add("is-on");
+        mchart.data.datasets[0].data = mt.tabs[i].data;
+        mchart.data.datasets[0].label = mt.tabs[i].key;
+        mchart.update();
+      }));
+    }
+  }
 
   /* ---------- FOOTER ---------- */
   $("#footerTagline").textContent = PROFILE.tagline;
