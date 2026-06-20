@@ -46,6 +46,12 @@ html[data-theme="woowa"] .btn--primary { background: #06EFD3; color: #063A33; }
 html[data-theme="woowa"] .btn--primary:hover { background: #04D9C0; color: #063A33; }
 /* featured 카드 사이드 그라데이션: 민트 끝에서 흰 글자가 묻히지 않게 딥 틸→중간 틸로 */
 html[data-theme="woowa"] .card--featured .card__side { background: linear-gradient(160deg, #0A7A6C 0%, #0FB8A4 100%); }
+/* ?set=musinsa — 무신사 블랙 모노톤. 강조=순블랙, 보조=연회색(명도 대비로 위계 확보) */
+html[data-theme="musinsa"] {
+  --accent:    #111111;   /* 무신사 블랙 — 텍스트·버튼·featured·차트 강조 */
+  --accent-2:  #5a6473;   /* 보조 — 도트·세컨더리(무채색) */
+  --accent-bg: #f2f3f5;
+}
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }

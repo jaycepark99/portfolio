@@ -24,6 +24,8 @@
     ? ["#A64DFF", "#C58CFF", "#d9b8ff", "#e8d4ff", "#f4ebff"]
     : setParam === "woowa"
     ? ["#0A9486", "#06EFD3", "#62efdd", "#a6f6ec", "#dcfbf6"]
+    : setParam === "musinsa"
+    ? ["#111111", "#c5cad3", "#e0e4ea", "#eef0f3", "#f5f6f8"]
     : ["#1456f0", "#3b82f6", "#6f9cf5", "#a8c2f9", "#d4e2fd"];
   const setQS = setParam ? `&set=${encodeURIComponent(setParam)}` : "";
   const backHref = "index.html" + (setParam ? `?set=${encodeURIComponent(setParam)}` : "") + "#projects";
@@ -177,6 +179,7 @@
     const ramp = setParam === "modoodoc" ? [[243, 236, 252], [83, 7, 176]]
                : setParam === "codeit"   ? [[244, 235, 255], [166, 77, 255]]
                : setParam === "woowa"     ? [[227, 253, 248], [10, 122, 108]]
+               : setParam === "musinsa"   ? [[240, 241, 243], [17, 17, 17]]
                :                           [[238, 243, 255], [20, 86, 240]];
     const [a, b] = ramp;
     const c = a.map((v, i) => Math.round(v + (b[i] - v) * t));
