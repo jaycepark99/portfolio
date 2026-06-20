@@ -28,6 +28,8 @@
     ? ["#111111", "#c5cad3", "#e0e4ea", "#eef0f3", "#f5f6f8"]
     : setParam === "danggeun"
     ? ["#FF6F0F", "#FF9450", "#ffb47e", "#ffd0ab", "#ffe9d6"]
+    : setParam === "levit"
+    ? ["#FB4545", "#FF7A7A", "#ff9e9e", "#ffc2c2", "#ffe2e2"]
     : ["#1456f0", "#3b82f6", "#6f9cf5", "#a8c2f9", "#d4e2fd"];
   const setQS = setParam ? `&set=${encodeURIComponent(setParam)}` : "";
   const backHref = "index.html" + (setParam ? `?set=${encodeURIComponent(setParam)}` : "") + "#projects";
@@ -183,6 +185,7 @@
                : setParam === "woowa"     ? [[227, 253, 248], [10, 122, 108]]
                : setParam === "musinsa"   ? [[240, 241, 243], [17, 17, 17]]
                : setParam === "danggeun"  ? [[255, 242, 232], [255, 111, 15]]
+               : setParam === "levit"     ? [[255, 226, 226], [251, 69, 69]]
                :                           [[238, 243, 255], [20, 86, 240]];
     const [a, b] = ramp;
     const c = a.map((v, i) => Math.round(v + (b[i] - v) * t));

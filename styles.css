@@ -58,6 +58,12 @@ html[data-theme="danggeun"] {
   --accent-2:  #FF9450;   /* 보조 — 도트·그라데이션 */
   --accent-bg: #FFF2E8;
 }
+/* ?set=levit — 레브잇 포인트 레드(#FB4545). 강조=레드, 보조=밝은 레드 */
+html[data-theme="levit"] {
+  --accent:    #FB4545;   /* 레브잇 레드 — 텍스트·버튼·featured·차트 강조 */
+  --accent-2:  #FF7A7A;   /* 보조 — 도트·그라데이션 */
+  --accent-bg: #FFECEC;
+}
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
