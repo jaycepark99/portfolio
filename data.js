@@ -1237,6 +1237,13 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
             "게임 플레이 로그(5,363건)·유입 출처 설문(326명)·피드백을 <b>모두 Supabase에 직접 적재</b> → 재플레이·학습곡선·게임별 완료율·다크소셜 출처까지 SQL로 쿼리·분석",
             "즉 GA4(웹 유입) + Supabase(플레이·설문·피드백 등 1st-party 데이터) 두 축을 직접 깔아 — '내가 만든 서비스의 데이터'를 처음부터 끝까지 수집·분석",
           ],
+          images: [
+            {
+              src: "img/jobda-feedback.png",
+              caption: "Supabase로 피드백·플레이·설문을 직접 수집 — 복잡한 분석·타겟팅은 SQL로 쿼리",
+              kind: "capture",
+            },
+          ],
           cta: {
             to: "channel-device",
             text: "측정 인프라를 깔고 채널을 줄세웠더니 유입 1위가 완료·재방문 꼴찌처럼 보였다 — 그런데 퍼널을 기기로 쪼개니 진짜 병목(모바일 첫 진입)도, '채널 질' 착시의 정체도 드러났다. 측정의 함정 심층 분석",
@@ -1260,15 +1267,55 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
           },
         },
         {
-          title: "4. 운영 루프 — 분석을 배포로, 피드백을 업데이트로",
-          lead: '분석을 <span class="hl">서비스 개선으로 되돌리고</span>, 피드백 받아 며칠 안에 배포 — 계속 도는 루프.',
+          title: "4. 개선 루프 — 고치고, '고친 게 효과 있었나'까지 검증",
+          lead: '피드백을 고치는 데서 멈추지 않고, <span class="hl">그 개선이 실제로 효과 있었는지</span>를 데이터로 검증했다.',
           points: [
-            "분석→배포: 결과 화면 '지난 판 +N점·2번째 판 넛지'(재플레이 유도) + 공유 UTM(바이럴 측정) + GA4 소스오염 수정·v2 태깅",
-            "피드백→업데이트: 사용자 요청 반영해 게임 4종 → 9종·전 게임 실전모드·'오답노트'(길만들기·도형회전, 틀린 문제 복습) 바이브코딩 추가, 익명 피드백 창구(Supabase)·맞춤 피드백",
-            "난이도는 실제 AI 역량검사 경험을 살려 '오르되 중간에 쉬운 문제가 섞이는' 램프로 구현",
+            "분석→배포: 결과 화면 성장 피드백·2번째 판 넛지(재플레이)·공유 UTM(바이럴 추적)·GA4 소스오염 수정·v2 태깅으로 전후 비교 설계",
+            "피드백→공개 루프: 익명 피드백 50건을 받아 수정하고 공개 패치노트('💬 의견 반영')로 닫음 — 의견 낸 사람이 반영된 걸 다시 본다 (게임 4종→9종·오답노트도 여기서 나옴)",
+            "효과 검증: 패치마다 Supabase SQL로 전후 비교하되 편향을 통제 — 재방문 학습효과를 빼려 '신규 사용자 첫 판'만, 시간제 게임은 정확도 아닌 <b>throughput(분당 푼 수)</b>, 평균 대신 <b>중앙값</b>으로",
+            "결과 예: 길찾기 난이도를 2번 올려도 신규 기준 평탄(throughput 2.53→2.66, '체감만 어려움'을 구분) / 도형회전 최소수는 군 D8 구조상 ≤3이 천장임을 전수검증(3,584케이스)으로 규명 → 난이도는 반전비율·속도로만. 표본 적은 당일 패치는 baseline 박고 2~3일 뒤 재검증 예약",
+          ],
+          chart: {
+            type: "bar",
+            title: "리텐션 — 사용자별 플레이 판수 분포",
+            labels: ["1판", "2-3판", "4판+"],
+            datasets: [{ label: "사용자 수(명)", data: [393, 466, 1992] }],
+            note: "4판+ 1,992명 — 로그인 없는 에피소드형인데도 재방문이 강함(로그인 동기화 재검토 가치).",
+          },
+          code: {
+            lang: "sql",
+            title: "분석 SQL — 리텐션 · 패치 전후(신규 첫 판) 검증",
+            body:
+`-- [1] 리텐션 — 며칠에 걸쳐 다시 오는 사람 (로그인 수요 판단)
+select case when n=1 then '1판' when n<=3 then '2-3판' else '4판+' end as bucket,
+       count(*) as users
+from (select session_id, count(*) n from game_responses group by session_id) s
+group by 1 order by 1;
+
+-- [5] 패치 전/후 '신규 첫 판'만 — 재방문 학습효과를 뺀 순수 난이도
+--     세션별 가장 이른 판 = 첫 판. after에서 throughput·정확도 떨어지면 진짜 어려워진 것
+with firsts as (
+  select distinct on (session_id) session_id, created_at, accuracy, correct_count
+  from game_responses
+  where game_id = 'path'
+    and created_at >= timestamptz '2026-06-16 16:27+09'
+    and created_at <  timestamptz '2026-06-24 16:27+09'
+  order by session_id, created_at)
+select case when created_at < timestamptz '2026-06-20 16:27+09'
+            then 'before' else 'after' end as period,
+       count(*) as new_users, round(avg(accuracy)) as first_acc,
+       round(avg(correct_count), 1) as throughput   -- 분당 푼 수(시간제 핵심 지표)
+from firsts group by 1 order by 1;`,
+          },
+          images: [
+            {
+              src: "img/jobda-changelog.png",
+              caption: "피드백 → 수정 → 공개 패치노트('💬 의견 반영')로 루프를 닫는다",
+              kind: "capture",
+            },
           ],
           callout:
-            "💡 피드백 → 며칠 안에 배포 → 다시 피드백. 만들고 → 측정 → 분석 → 개선이 한 바퀴가 아니라 '계속 도는 루프'가 됐습니다.",
+            "💡 '고쳤다'가 아니라 '고친 게 효과 있었나'를 편향까지 통제해 검증 — AI 결과를 평가하고 A/B로 실험하는 것과 똑같은 근육입니다.",
         },
       ],
       resultStats: [
