@@ -72,10 +72,12 @@ html[data-theme="wrtn"] {
   --accent-2:  #6b6b6b;   /* 보조 그레이 */
   --accent-bg: #f3f3f2;   /* 옅은 그레이 배경 */
 }
-/* 레드는 '아이브로 라벨 + 이름(브랜드 단어)'에만 가끔 (뤼튼 패턴) */
+/* 레드는 '아이브로 라벨 + 이름(브랜드 단어)'에만 가끔 (뤼튼 패턴).
+   상세 페이지도 같은 규칙: 섹션 번호(01·02·03)가 홈 아이브로와 같은 자리. */
 html[data-theme="wrtn"] .hero__eyebrow,
 html[data-theme="wrtn"] .section__tag,
-html[data-theme="wrtn"] .hero__title b { color: #F54211; }
+html[data-theme="wrtn"] .hero__title b,
+html[data-theme="wrtn"] .d-h2__no { color: #F54211; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
