@@ -64,13 +64,20 @@ html[data-theme="levit"] {
   --accent-2:  #FF7A7A;   /* 보조 — 도트·그라데이션 */
   --accent-bg: #FFECEC;
 }
-/* ?set=wrtn — 뤼튼 공식색 'Inspire Red' #F54211(버밀리언, 주황빛 레드 — 제품 wrtn.ai 확인).
-   레브잇(#FB4545·핑크빛)과 달리 주황 계열이라 구분됨. */
+/* ?set=wrtn — 뤼튼식 '블랙 기본 + 레드 살짝'.
+   뤼튼은 모노(블랙/화이트) 바탕에 브랜드 레드 'Inspire Red' #F54211(버밀리언, 제품 wrtn.ai 확인)을
+   숫자·로고 같은 포인트에만 쓴다. → 기본 강조는 블랙, 레드는 핵심 데이터 숫자에만 살짝. */
 html[data-theme="wrtn"] {
-  --accent:    #F54211;   /* 뤼튼 레드 — 텍스트·버튼·featured·차트 강조 */
-  --accent-2:  #FF7A52;   /* 보조 — 도트·그라데이션 */
-  --accent-bg: #FFEDE6;
+  --accent:    #161616;   /* 블랙 기본 — 이름·버튼·태그·링크 */
+  --accent-2:  #6b6b6b;   /* 보조 그레이 — 도트·featured 그라데이션 끝 */
+  --accent-bg: #f3f3f2;   /* 옅은 그레이 배경 */
 }
+/* 레드는 핵심 데이터 숫자에만 (뤼튼 브랜드 레드) */
+html[data-theme="wrtn"] .hero__stats .num,
+html[data-theme="wrtn"] .metric__value,
+html[data-theme="wrtn"] .d-hero__metric-val,
+html[data-theme="wrtn"] .d-stat__v { color: #F54211; }
+html[data-theme="wrtn"] .card--featured .card__side .metric__value { color: #F54211; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
