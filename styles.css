@@ -64,6 +64,13 @@ html[data-theme="levit"] {
   --accent-2:  #FF7A7A;   /* 보조 — 도트·그라데이션 */
   --accent-bg: #FFECEC;
 }
+/* ?set=wrtn — 뤼튼 공식색 'Inspire Red' #F54211(버밀리언, 주황빛 레드 — 제품 wrtn.ai 확인).
+   레브잇(#FB4545·핑크빛)과 달리 주황 계열이라 구분됨. */
+html[data-theme="wrtn"] {
+  --accent:    #F54211;   /* 뤼튼 레드 — 텍스트·버튼·featured·차트 강조 */
+  --accent-2:  #FF7A52;   /* 보조 — 도트·그라데이션 */
+  --accent-bg: #FFEDE6;
+}
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
