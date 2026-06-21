@@ -386,7 +386,7 @@
     return `
       <section class="d-section d-section--alt">
         <div class="wrap">
-          <h2 class="d-h2"><span class="d-h2__no">06</span> 회고 <span class="d-h2__sub">한계 · 다음 단계</span></h2>
+          <h2 class="d-h2"><span class="d-h2__no">${d.proposal && d.proposal.length ? "06" : "05"}</span> 회고 <span class="d-h2__sub">한계 · 다음 단계</span></h2>
           <ul class="d-list d-list--retro">${list}</ul>
         </div>
       </section>`;
