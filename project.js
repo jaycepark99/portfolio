@@ -30,6 +30,8 @@
     ? ["#FF6F0F", "#FF9450", "#ffb47e", "#ffd0ab", "#ffe9d6"]
     : setParam === "levit"
     ? ["#FB4545", "#FF7A7A", "#ff9e9e", "#ffc2c2", "#ffe2e2"]
+    : setParam === "wrtn"
+    ? ["#1a1a1a", "#a8adb6", "#cdd1d8", "#e4e7ec", "#f2f3f5"]
     : ["#1456f0", "#3b82f6", "#6f9cf5", "#a8c2f9", "#d4e2fd"];
   const setQS = setParam ? `&set=${encodeURIComponent(setParam)}` : "";
   const backHref = "index.html" + (setParam ? `?set=${encodeURIComponent(setParam)}` : "") + "#projects";
@@ -186,6 +188,7 @@
                : setParam === "musinsa"   ? [[240, 241, 243], [17, 17, 17]]
                : setParam === "danggeun"  ? [[255, 242, 232], [255, 111, 15]]
                : setParam === "levit"     ? [[255, 226, 226], [251, 69, 69]]
+               : setParam === "wrtn"      ? [[240, 241, 243], [26, 26, 26]]
                :                           [[238, 243, 255], [20, 86, 240]];
     const [a, b] = ramp;
     const c = a.map((v, i) => Math.round(v + (b[i] - v) * t));

@@ -64,20 +64,18 @@ html[data-theme="levit"] {
   --accent-2:  #FF7A7A;   /* 보조 — 도트·그라데이션 */
   --accent-bg: #FFECEC;
 }
-/* ?set=wrtn — 뤼튼식 '블랙 기본 + 레드 살짝'.
-   뤼튼은 모노(블랙/화이트) 바탕에 브랜드 레드 'Inspire Red' #F54211(버밀리언, 제품 wrtn.ai 확인)을
-   숫자·로고 같은 포인트에만 쓴다. → 기본 강조는 블랙, 레드는 핵심 데이터 숫자에만 살짝. */
+/* ?set=wrtn — 뤼튼식 '강한 B&W + 레드는 가끔'.
+   뤼튼 사이트는 흑백이 강하게 깔리고, 브랜드 레드 'Inspire Red' #F54211(버밀리언, 제품 wrtn.ai 확인)을
+   아이브로 라벨·브랜드 단어에만 가끔 쓴다. → 강조·숫자·차트 전부 흑백, 레드는 아이브로/이름에만. */
 html[data-theme="wrtn"] {
-  --accent:    #161616;   /* 블랙 기본 — 이름·버튼·태그·링크 */
-  --accent-2:  #6b6b6b;   /* 보조 그레이 — 도트·featured 그라데이션 끝 */
+  --accent:    #161616;   /* B&W 기본 — 이름 본문·버튼·태그·숫자·차트까지 검정 */
+  --accent-2:  #6b6b6b;   /* 보조 그레이 */
   --accent-bg: #f3f3f2;   /* 옅은 그레이 배경 */
 }
-/* 레드는 핵심 데이터 숫자에만 (뤼튼 브랜드 레드) */
-html[data-theme="wrtn"] .hero__stats .num,
-html[data-theme="wrtn"] .metric__value,
-html[data-theme="wrtn"] .d-hero__metric-val,
-html[data-theme="wrtn"] .d-stat__v { color: #F54211; }
-html[data-theme="wrtn"] .card--featured .card__side .metric__value { color: #F54211; }
+/* 레드는 '아이브로 라벨 + 이름(브랜드 단어)'에만 가끔 (뤼튼 패턴) */
+html[data-theme="wrtn"] .hero__eyebrow,
+html[data-theme="wrtn"] .section__tag,
+html[data-theme="wrtn"] .hero__title b { color: #F54211; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
