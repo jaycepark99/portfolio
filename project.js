@@ -263,7 +263,9 @@
             ? `<div class="d-hero__links" style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px;">${proj.links
                 .map(
                   (l) =>
-                    `<a href="${esc(l.url)}" target="_blank" rel="noopener" style="display:inline-block;padding:8px 15px;border:1px solid var(--accent);border-radius:8px;color:var(--accent);text-decoration:none;font-size:13px;font-weight:600;">${esc(l.label)}</a>`
+                    l.label.includes("체험")
+                      ? `<a href="${esc(l.url)}" target="_blank" rel="noopener" style="display:inline-block;padding:8px 15px;border:1px solid var(--accent);border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:13px;font-weight:600;">${esc(l.label)}</a>`
+                      : `<a href="${esc(l.url)}" target="_blank" rel="noopener" style="display:inline-block;padding:8px 15px;border:1px solid var(--accent);border-radius:8px;color:var(--accent);text-decoration:none;font-size:13px;font-weight:600;">${esc(l.label)}</a>`
                 )
                 .join("")}</div>`
             : ""
