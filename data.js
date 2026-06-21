@@ -44,6 +44,7 @@ const PRESETS = {
   musinsa:    { label: "바이브코딩·AI 모델 평가·실험·대시보드 자동화", featured: "trainer", show: ["churn", "abtest", "dashboard"] },
   danggeun:   { label: "현장 운영 개선·VOC·자동화·AI 빌드", featured: "abtest", show: ["dashboard", "trainer", "growth"] },
   levit:      { label: "AI 제품 직접 빌드·PMF 검증·고객 문제 발굴", featured: "trainer", show: ["dashboard", "growth", "abtest"] },
+  wrtn:       { label: "AI 에이전트·자동화 직접 빌드 · LLM·프롬프트 · 측정 운영", featured: "trainer", show: ["dashboard", "abtest", "churn"] },
 };
 
 const HERO_STATS = [
