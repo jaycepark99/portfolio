@@ -31,6 +31,12 @@ html[data-theme="codeit"] {
   --accent-2:  #C58CFF;
   --accent-bg: #F4EBFF;
 }
+/* ?set=delivus — 딜리버스 포트폴리오 덱과 동일한 보라(#7366FF) */
+html[data-theme="delivus"] {
+  --accent:    #7366FF;
+  --accent-2:  #9D8EFF;
+  --accent-bg: #F1EFFF;
+}
 /* ?set=woowa — 우아한청년들: 포인트 색 민트 #06EFD3.
    민트는 흰 배경 텍스트로 대비가 약해(가독성↓), 포인트(--accent-2)·버튼·도트로만 쓰고
    본문/작은 텍스트는 같은 계열 딥 틸(--accent)로 읽히게 한다. */

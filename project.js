@@ -32,6 +32,8 @@
     ? ["#FB4545", "#FF7A7A", "#ff9e9e", "#ffc2c2", "#ffe2e2"]
     : setParam === "wrtn"
     ? ["#1a1a1a", "#a8adb6", "#cdd1d8", "#e4e7ec", "#f2f3f5"]
+    : setParam === "delivus"
+    ? ["#7366FF", "#9D8EFF", "#b8adff", "#d6cfff", "#ede9ff"]
     : ["#1456f0", "#3b82f6", "#6f9cf5", "#a8c2f9", "#d4e2fd"];
   const setQS = setParam ? `&set=${encodeURIComponent(setParam)}` : "";
   const backHref = "index.html" + (setParam ? `?set=${encodeURIComponent(setParam)}` : "") + "#projects";
