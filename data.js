@@ -46,6 +46,7 @@ const PRESETS = {
   levit:      { label: "AI 제품 직접 빌드·PMF 검증·고객 문제 발굴", featured: "trainer", show: ["dashboard", "growth", "abtest"] },
   wrtn:       { label: "AI 에이전트·자동화 직접 빌드 · LLM·프롬프트 · 측정 운영", featured: "trainer", show: ["dashboard", "abtest", "churn"] },
   delivus:    { label: "배송·물류 운영 분석·A/B·통계 검증·이탈 예측 모델링", featured: "abtest", show: ["dashboard", "churn", "trainer"] },
+  tain:       { label: "AI 서비스 직접 빌드·PoC/MVP 지표 검증·빠른 실험", featured: "trainer", show: ["abtest", "dashboard", "growth"] },
 };
 
 const HERO_STATS = [
