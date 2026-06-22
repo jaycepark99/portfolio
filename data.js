@@ -1288,7 +1288,7 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
             "분석→배포: 결과 화면 성장 피드백·2번째 판 넛지(재플레이)·공유 UTM(바이럴 추적)·GA4 소스오염 수정·v2 태깅으로 전후 비교 설계",
             "피드백→공개 루프: 익명 피드백 50건을 받아 수정하고 공개 패치노트('💬 의견 반영')로 닫음 — 의견 낸 사람이 반영된 걸 다시 본다 (게임 4종→9종·오답노트도 여기서 나옴)",
             "효과 검증: 패치마다 Supabase SQL로 전후 비교하되 편향을 통제 — 재방문 학습효과를 빼려 '신규 사용자 첫 판'만, 시간제 게임은 정확도 아닌 <b>throughput(분당 푼 수)</b>, 평균 대신 <b>중앙값</b>으로",
-            "결과 예: 길찾기 난이도를 2번 올려도 신규 기준 평탄(throughput 2.53→2.66, '체감만 어려움'을 구분) / 도형회전 최소수는 군 D8 구조상 ≤3이 천장임을 전수검증(3,584케이스)으로 규명 → 난이도는 반전비율·속도로만. 표본 적은 당일 패치는 baseline 박고 2~3일 뒤 재검증 예약",
+            "결과 예: 초기엔 난이도를 올려도 신규 기준 평탄해 '체감만 어려움'임을 가려냈고, 원인이 '벽 개수 × 해 유일성' 두 축임을 분석해 6/21에 실전 분포로 재설계 → 신규 첫 판 perfect율 0.73→0.61·throughput(분당) 2.00→1.64로 실제로 어려워진 걸 확인 / 도형회전 최소수는 군 D8 구조상 천장임을 전수검증(3,584케이스)으로 규명. 표본 적은 당일 패치는 baseline 박고 2~3일 뒤 재검증 예약",
           ],
           chart: {
             type: "bar",
@@ -1316,7 +1316,7 @@ with firsts as (
     and created_at >= timestamptz '2026-06-16 16:27+09'
     and created_at <  timestamptz '2026-06-24 16:27+09'
   order by session_id, created_at)
-select case when created_at < timestamptz '2026-06-20 16:27+09'
+select case when created_at < timestamptz '2026-06-21 14:52+09'
             then 'before' else 'after' end as period,
        count(*) as new_users, round(avg(accuracy)) as first_acc,
        round(avg(correct_count), 1) as throughput   -- 분당 푼 수(시간제 핵심 지표)
