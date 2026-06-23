@@ -31,6 +31,12 @@ html[data-theme="codeit"] {
   --accent-2:  #C58CFF;
   --accent-bg: #F4EBFF;
 }
+/* ?set=bdai — BDAI 데이터팀 보라(#7C3AED, 포트폴리오 덱과 일치) */
+html[data-theme="bdai"] {
+  --accent:    #7C3AED;
+  --accent-2:  #A78BFA;
+  --accent-bg: #F3ECFD;
+}
 /* ?set=delivus — 딜리버스 포트폴리오 덱과 동일한 보라(#7366FF) */
 html[data-theme="delivus"] {
   --accent:    #7366FF;

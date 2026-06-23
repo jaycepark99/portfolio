@@ -34,6 +34,8 @@
     ? ["#1a1a1a", "#a8adb6", "#cdd1d8", "#e4e7ec", "#f2f3f5"]
     : setParam === "delivus"
     ? ["#7366FF", "#9D8EFF", "#b8adff", "#d6cfff", "#ede9ff"]
+    : setParam === "bdai"
+    ? ["#7C3AED", "#A78BFA", "#c4b1f7", "#ddd0f9", "#efe9fc"]
     : ["#1456f0", "#3b82f6", "#6f9cf5", "#a8c2f9", "#d4e2fd"];
   const setQS = setParam ? `&set=${encodeURIComponent(setParam)}` : "";
   const backHref = "index.html" + (setParam ? `?set=${encodeURIComponent(setParam)}` : "") + "#projects";
@@ -191,6 +193,7 @@
                : setParam === "danggeun"  ? [[255, 242, 232], [255, 111, 15]]
                : setParam === "levit"     ? [[255, 226, 226], [251, 69, 69]]
                : setParam === "wrtn"      ? [[240, 241, 243], [26, 26, 26]]
+               : setParam === "bdai"      ? [[243, 236, 252], [124, 58, 237]]
                :                           [[238, 243, 255], [20, 86, 240]];
     const [a, b] = ramp;
     const c = a.map((v, i) => Math.round(v + (b[i] - v) * t));
