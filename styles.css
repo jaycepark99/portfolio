@@ -90,6 +90,18 @@ html[data-theme="wrtn"] .hero__eyebrow,
 html[data-theme="wrtn"] .section__tag,
 html[data-theme="wrtn"] .hero__title b,
 html[data-theme="wrtn"] .d-h2__no { color: #F54211; }
+/* ?set=tain — 타인에이아이/러비더비식 '강한 B&W + 핑크는 아주 가끔'.
+   러비더비 사이트는 블랙·화이트가 기본이고 브랜드 핑크(#FF4D97)를 아주 드물게만 쓴다.
+   → 강조·숫자·차트 전부 흑백, 핑크는 아이브로 라벨·이름(브랜드 단어)에만 (wrtn 패턴과 동일). */
+html[data-theme="tain"] {
+  --accent:    #161616;   /* B&W 기본 — 이름 본문·버튼·태그·숫자·차트까지 검정 */
+  --accent-2:  #6b6b6b;   /* 보조 그레이 */
+  --accent-bg: #f3f3f2;   /* 옅은 그레이 배경 */
+}
+html[data-theme="tain"] .hero__eyebrow,
+html[data-theme="tain"] .section__tag,
+html[data-theme="tain"] .hero__title b,
+html[data-theme="tain"] .d-h2__no { color: #FF4D97; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
