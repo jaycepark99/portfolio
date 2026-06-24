@@ -446,7 +446,7 @@ a { color: inherit; text-decoration: none; }
 .d-hero__top { margin-top: 22px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 .d-hero__period { font-family: var(--mono); font-size: .82rem; color: var(--ink-soft); }
 .d-hero__title { font-size: clamp(1.55rem, 4vw, 2.4rem); font-weight: 800; letter-spacing: -0.025em; margin-top: 14px; line-height: 1.3; }
-.d-hero__summary { margin-top: 14px; max-width: 62ch; color: var(--ink-soft); font-size: clamp(1rem, 1.4vw, 1.1rem); }
+.d-hero__summary { margin-top: 14px; max-width: 62ch; color: var(--ink-soft); font-size: clamp(1rem, 1.4vw, 1.1rem); word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
 .d-hero__tools { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
 .t-chip {
   font-family: var(--mono); font-size: .76rem; padding: 5px 12px; border-radius: 999px;
