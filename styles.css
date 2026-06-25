@@ -102,6 +102,12 @@ html[data-theme="tain"] .hero__eyebrow,
 html[data-theme="tain"] .section__tag,
 html[data-theme="tain"] .hero__title b,
 html[data-theme="tain"] .d-h2__no { color: #FF4D97; }
+/* ?set=memebox — 미미박스 핑크(#FF7C92). 강조=핑크, 보조=밝은 핑크 (덱과 동일 포인트색) */
+html[data-theme="memebox"] {
+  --accent:    #FF7C92;   /* 미미박스 핑크 — 텍스트·버튼·featured·차트 강조 */
+  --accent-2:  #FF9FB0;   /* 보조 — 도트·그라데이션 */
+  --accent-bg: #FFF0F3;
+}
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
