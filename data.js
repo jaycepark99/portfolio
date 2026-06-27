@@ -49,7 +49,7 @@ const PRESETS = {
   tain:       { label: "AI 서비스 직접 빌드·PoC/MVP 지표 검증·빠른 실험", featured: "trainer", show: ["abtest", "dashboard", "growth"] },
   memebox:    { label: "AI 서비스 직접 빌드·업무 자동화·지표 측정 운영", featured: "trainer", show: ["abtest", "dashboard", "growth"] },
   bdai:       { label: "학회원 데이터 분석·LMS 참여도 · A/B·대시보드 · AI 빌드", featured: "abtest", show: ["dashboard", "trainer", "churn"] },
-  likelion:   { label: "바이브코딩 풀사이클 빌드·퍼널 지표 루프·A/B 실험", featured: "trainer", show: ["growth", "abtest", "dashboard"] },
+  likelion:   { label: "바이브코딩 풀사이클 빌드·자체 웹앱 제작·A/B 실험", featured: "trainer", show: ["abtest", "dashboard", "growth"] },
   plitto:     { label: "AI 서비스 직접 빌드·유저 행동 분석·피드백 운영 루프", featured: "trainer", show: ["abtest", "dashboard", "growth"] },
 };
 
