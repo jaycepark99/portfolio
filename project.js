@@ -42,6 +42,8 @@
     ? ["#1B77F0", "#4a93f4", "#7cb0f7", "#aecdfa", "#dfecfe"]
     : setParam === "likelion"
     ? ["#FF6000", "#ff8a3d", "#ffab73", "#ffcaa6", "#ffe7d4"]
+    : setParam === "retrica"
+    ? ["#FF8100", "#ffa040", "#ffba73", "#ffd3a6", "#ffead6"]
     : ["#1456f0", "#3b82f6", "#6f9cf5", "#a8c2f9", "#d4e2fd"];
   const setQS = setParam ? `&set=${encodeURIComponent(setParam)}` : "";
   const backHref = "index.html" + (setParam ? `?set=${encodeURIComponent(setParam)}` : "") + "#projects";
@@ -203,6 +205,7 @@
                : setParam === "memebox"   ? [[255, 240, 243], [255, 124, 146]]
                : setParam === "plitto"    ? [[233, 242, 254], [27, 119, 240]]
                : setParam === "likelion"  ? [[255, 240, 232], [255, 96, 0]]
+               : setParam === "retrica"   ? [[255, 243, 230], [255, 129, 0]]
                :                           [[238, 243, 255], [20, 86, 240]];
     const [a, b] = ramp;
     const c = a.map((v, i) => Math.round(v + (b[i] - v) * t));

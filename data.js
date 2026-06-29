@@ -51,6 +51,7 @@ const PRESETS = {
   bdai:       { label: "학회원 데이터 분석·LMS 참여도 · A/B·대시보드 · AI 빌드", featured: "abtest", show: ["dashboard", "trainer", "churn"] },
   likelion:   { label: "바이브코딩 풀사이클 빌드·자체 웹앱 제작·A/B 실험", featured: "trainer", show: ["abtest", "dashboard", "growth"] },
   plitto:     { label: "AI 서비스 직접 빌드·유저 행동 분석·피드백 운영 루프", featured: "trainer", show: ["abtest", "dashboard", "growth"] },
+  retrica:    { label: "데이터 계측·트래킹 설계 · A/B 통계 검증 · 이탈/LTV · 직접 빌드", featured: "trainer", show: ["abtest", "churn", "growth"] },
 };
 
 const HERO_STATS = [

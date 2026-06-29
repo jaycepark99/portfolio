@@ -120,6 +120,12 @@ html[data-theme="likelion"] {
   --accent-2:  #ff8a3d;   /* 보조 — 도트·그라데이션 */
   --accent-bg: #fff0e8;
 }
+/* ?set=retrica — 레트리카 포인트 오렌지(#FF8100). 강조=오렌지, 보조=밝은 오렌지 (덱과 동일 포인트색) */
+html[data-theme="retrica"] {
+  --accent:    #FF8100;   /* 레트리카 오렌지 — 텍스트·버튼·featured·차트 강조 */
+  --accent-2:  #ffa040;   /* 보조 — 도트·그라데이션 */
+  --accent-bg: #fff3e6;
+}
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
