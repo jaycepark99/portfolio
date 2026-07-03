@@ -52,6 +52,7 @@ const PRESETS = {
   likelion:   { label: "바이브코딩 풀사이클 빌드·자체 웹앱 제작·A/B 실험", featured: "trainer", show: ["abtest", "dashboard", "growth"] },
   plitto:     { label: "AI 서비스 직접 빌드·유저 행동 분석·피드백 운영 루프", featured: "trainer", show: ["abtest", "dashboard", "growth"] },
   retrica:    { label: "데이터 계측·트래킹 설계 · A/B 통계 검증 · 이탈/LTV · 직접 빌드", featured: "trainer", show: ["abtest", "churn", "growth"] },
+  dobi:       { label: "PLG 전환 실험·인프로덕트 계측·그로스 엔지니어(직접 빌드)", featured: "trainer", show: ["abtest", "growth", "churn"] },
 };
 
 const HERO_STATS = [
