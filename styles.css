@@ -126,6 +126,12 @@ html[data-theme="retrica"] {
   --accent-2:  #ffa040;   /* 보조 — 도트·그라데이션 */
   --accent-bg: #fff3e6;
 }
+/* ?set=teamsparta — 팀스파르타 포인트 레드(#E8344E). 강조=레드, 보조=밝은 레드 (덱과 동일 포인트색) */
+html[data-theme="teamsparta"] {
+  --accent:    #E8344E;   /* 팀스파르타 레드 — 텍스트·버튼·featured·차트 강조 */
+  --accent-2:  #f26d80;   /* 보조 — 도트·그라데이션 */
+  --accent-bg: #fdeaed;
+}
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
