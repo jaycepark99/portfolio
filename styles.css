@@ -132,6 +132,12 @@ html[data-theme="teamsparta"] {
   --accent-2:  #f26d80;   /* 보조 — 도트·그라데이션 */
   --accent-bg: #fdeaed;
 }
+/* ?set=supercent — 슈퍼센트 포인트 바이올렛(#802BFE, 사용자 지정). 강조=바이올렛, 보조=밝은 바이올렛 */
+html[data-theme="supercent"] {
+  --accent:    #802BFE;   /* 슈퍼센트 바이올렛 — 텍스트·버튼·featured·차트 강조 */
+  --accent-2:  #a566ff;   /* 보조 — 도트·그라데이션 */
+  --accent-bg: #f2ecff;
+}
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }

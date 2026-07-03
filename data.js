@@ -54,6 +54,7 @@ const PRESETS = {
   retrica:    { label: "데이터 계측·트래킹 설계 · A/B 통계 검증 · 이탈/LTV · 직접 빌드", featured: "trainer", show: ["abtest", "churn", "growth"] },
   dobi:       { label: "PLG 전환 실험·인프로덕트 계측·그로스 엔지니어(직접 빌드)", featured: "trainer", show: ["abtest", "growth", "churn"] },
   teamsparta: { label: "교육을 제품으로·지표/가설로 개선·AI 빌드·운영 자동화", featured: "trainer", show: ["abtest", "dashboard", "growth"] },
+  supercent:  { label: "실험·증분 기여도(Incrementality)·채널 계측 · Feature Engineering·LTV · KPI 발굴", featured: "trainer", show: ["abtest", "churn", "growth"] },
 };
 
 const HERO_STATS = [
