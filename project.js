@@ -46,6 +46,10 @@
     ? ["#FF8100", "#ffa040", "#ffba73", "#ffd3a6", "#ffead6"]
     : setParam === "teamsparta"
     ? ["#E8344E", "#f26d80", "#f79aa8", "#fbc4cd", "#fdeaed"]
+    : setParam === "catchtable"
+    ? ["#FF4E00", "#ff7a40", "#ffa073", "#ffc5a6", "#ffe6d8"]
+    : setParam === "kakaopay"
+    ? ["#161616", "#FFDE00", "#ffe95c", "#fff29e", "#fff9d6"]
     : ["#1456f0", "#3b82f6", "#6f9cf5", "#a8c2f9", "#d4e2fd"];
   const setQS = setParam ? `&set=${encodeURIComponent(setParam)}` : "";
   const backHref = "index.html" + (setParam ? `?set=${encodeURIComponent(setParam)}` : "") + "#projects";
@@ -209,6 +213,8 @@
                : setParam === "likelion"  ? [[255, 240, 232], [255, 96, 0]]
                : setParam === "retrica"   ? [[255, 243, 230], [255, 129, 0]]
                : setParam === "teamsparta" ? [[253, 234, 237], [232, 52, 78]]
+               : setParam === "catchtable" ? [[255, 238, 229], [255, 78, 0]]
+               : setParam === "kakaopay"  ? [[255, 250, 224], [232, 181, 0]]
                :                           [[238, 243, 255], [20, 86, 240]];
     const [a, b] = ramp;
     const c = a.map((v, i) => Math.round(v + (b[i] - v) * t));
