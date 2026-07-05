@@ -138,11 +138,11 @@ html[data-theme="supercent"] {
   --accent-2:  #a566ff;   /* 보조 — 도트·그라데이션 */
   --accent-bg: #f2ecff;
 }
-/* ?set=catchtable — 캐치테이블 오렌지레드(#FF4E00, 채용폼 포인트색 근사). 강조=오렌지레드, 보조=밝은 오렌지 */
+/* ?set=catchtable — 캐치테이블 포인트 오렌지레드(#FF3D00, 사용자 지정 공식 포인트색). 강조=오렌지레드, 보조=밝은 오렌지 */
 html[data-theme="catchtable"] {
-  --accent:    #FF4E00;   /* 캐치테이블 오렌지레드 — 텍스트·버튼·featured·차트 강조 */
-  --accent-2:  #ff7a40;   /* 보조 — 도트·그라데이션 */
-  --accent-bg: #fff0e8;
+  --accent:    #FF3D00;   /* 캐치테이블 오렌지레드 — 텍스트·버튼·featured·차트 강조 */
+  --accent-2:  #ff6a33;   /* 보조 — 도트·그라데이션 */
+  --accent-bg: #ffede5;
 }
 /* ?set=kakaopay — 카카오페이: '글씨는 검정, 옐로는 배경 칠로만'(채용 페이지 패턴, 사용자 확정 2026-07).
    카카오 옐로(#FFEB00)는 흰 배경 텍스트로 대비가 안 나와 텍스트·숫자·차트는 검정(B&W),

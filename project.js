@@ -47,7 +47,7 @@
     : setParam === "teamsparta"
     ? ["#E8344E", "#f26d80", "#f79aa8", "#fbc4cd", "#fdeaed"]
     : setParam === "catchtable"
-    ? ["#FF4E00", "#ff7a40", "#ffa073", "#ffc5a6", "#ffe6d8"]
+    ? ["#FF3D00", "#ff6a33", "#ff9166", "#ffbd9e", "#ffe4d6"]
     : setParam === "kakaopay"
     ? ["#161616", "#FFDE00", "#ffe95c", "#fff29e", "#fff9d6"]
     : ["#1456f0", "#3b82f6", "#6f9cf5", "#a8c2f9", "#d4e2fd"];
@@ -213,7 +213,7 @@
                : setParam === "likelion"  ? [[255, 240, 232], [255, 96, 0]]
                : setParam === "retrica"   ? [[255, 243, 230], [255, 129, 0]]
                : setParam === "teamsparta" ? [[253, 234, 237], [232, 52, 78]]
-               : setParam === "catchtable" ? [[255, 238, 229], [255, 78, 0]]
+               : setParam === "catchtable" ? [[255, 237, 229], [255, 61, 0]]
                : setParam === "kakaopay"  ? [[255, 250, 224], [232, 181, 0]]
                :                           [[238, 243, 255], [20, 86, 240]];
     const [a, b] = ramp;
