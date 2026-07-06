@@ -138,6 +138,12 @@ html[data-theme="supercent"] {
   --accent-2:  #a566ff;   /* 보조 — 도트·그라데이션 */
   --accent-bg: #f2ecff;
 }
+/* ?set=channeltalk — 채널톡 포인트 퍼플블루(#552CFF, 사용자 지정). 강조=퍼플블루, 보조=밝은 퍼플 */
+html[data-theme="channeltalk"] {
+  --accent:    #552CFF;   /* 채널톡 퍼플블루 — 텍스트·버튼·featured·차트 강조 */
+  --accent-2:  #7a5aff;   /* 보조 — 도트·그라데이션 */
+  --accent-bg: #eeeaff;
+}
 /* ?set=catchtable — 캐치테이블 포인트 오렌지레드(#FF3D00, 사용자 지정 공식 포인트색). 강조=오렌지레드, 보조=밝은 오렌지 */
 html[data-theme="catchtable"] {
   --accent:    #FF3D00;   /* 캐치테이블 오렌지레드 — 텍스트·버튼·featured·차트 강조 */

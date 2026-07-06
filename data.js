@@ -57,6 +57,7 @@ const PRESETS = {
   supercent:  { label: "실험·증분 기여도(Incrementality)·채널 계측 · Feature Engineering·LTV · KPI 발굴", featured: "trainer", show: ["abtest", "churn", "growth"] },
   catchtable: { label: "사업 지표·KPI 구조화 · 원인 진단·A/B 검증 · SQL 코호트 분석", featured: "dashboard", show: ["abtest", "growth", "trainer"] },
   kakaopay:   { label: "AI 반복 업무 자동화 · SQL 데이터 관리 · 직접 빌드·운영", featured: "dashboard", show: ["trainer", "growth", "abtest"] },
+  channeltalk: { label: "AI 업무 자동화(n8n·Dify) · RAG 상담봇 직접 빌드 · 도입 후 데이터 검증", featured: "aiops", show: ["trainer", "abtest", "dashboard"] },
 };
 
 const HERO_STATS = [
