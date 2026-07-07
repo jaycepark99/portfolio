@@ -166,6 +166,22 @@ html[data-theme="kakaopay"] .btn--primary:hover { background: #F2DC00; color: #1
 html[data-theme="kakaopay"] .card--featured .card__side { background: linear-gradient(160deg, #FFEB00 0%, #FFD900 100%); }
 html[data-theme="kakaopay"] .card--featured .card__side .metric__value { color: #191919; }
 html[data-theme="kakaopay"] .card--featured .card__side .metric__label { color: rgba(25,25,25,.72); }
+/* ?set=pfct — PFC Technologies: 검정 워드마크 + 민트(#0DF28A) 액센트.
+   민트는 형광이라 흰 배경 텍스트로 대비가 약함 → 카카오페이 패턴처럼 텍스트·숫자·차트는 잉크 블랙,
+   민트는 버튼·도트·featured 배경 칠·연한 민트 배경으로만(브랜드 정체성=블랙+민트 그대로). */
+html[data-theme="pfct"] {
+  --accent:    #111827;   /* 잉크 블랙 — 텍스트·숫자·차트 (PFCT 워드마크와 일치) */
+  --accent-2:  #06A15F;   /* 읽히는 딥민트 — 아이브로·라벨·도트·불릿(흰 배경 텍스트 대비 확보) */
+  --accent-bg: #E4FCF1;   /* 옅은 민트 배경 */
+}
+/* 형광 민트(#0DF28A)는 '칠'로만 튀게 — CTA 버튼 배경 = 순 민트 + 딥그린 글자 */
+/* 버튼은 민트로 채우고 글자는 딥 그린(흰 글자는 민트 위 대비 부족) */
+html[data-theme="pfct"] .nav__cta { background: #0DF28A; color: #05372A !important; }
+html[data-theme="pfct"] .nav__cta:hover { background: #0AD97B; color: #05372A !important; }
+html[data-theme="pfct"] .btn--primary { background: #0DF28A; color: #05372A; }
+html[data-theme="pfct"] .btn--primary:hover { background: #0AD97B; color: #05372A; }
+/* featured 카드 사이드: 형광 민트 끝에서 흰 글자가 묻히지 않게 딥 에메랄드→중간 민트로(우아한청년들 패턴) */
+html[data-theme="pfct"] .card--featured .card__side { background: linear-gradient(160deg, #05663F 0%, #0BB06E 100%); }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }

@@ -52,6 +52,8 @@
     ? ["#161616", "#FFDE00", "#ffe95c", "#fff29e", "#fff9d6"]
     : setParam === "channeltalk"
     ? ["#552CFF", "#7a5aff", "#9d85ff", "#c3b5ff", "#e7e1ff"]
+    : setParam === "pfct"
+    ? ["#111827", "#0DF28A", "#5cf3b3", "#a3f8d3", "#e4fcf1"]
     : ["#1456f0", "#3b82f6", "#6f9cf5", "#a8c2f9", "#d4e2fd"];
   const setQS = setParam ? `&set=${encodeURIComponent(setParam)}` : "";
   const backHref = "index.html" + (setParam ? `?set=${encodeURIComponent(setParam)}` : "") + "#projects";
@@ -218,6 +220,7 @@
                : setParam === "catchtable" ? [[255, 237, 229], [255, 61, 0]]
                : setParam === "kakaopay"  ? [[255, 250, 224], [232, 181, 0]]
                : setParam === "channeltalk" ? [[238, 234, 255], [85, 44, 255]]
+               : setParam === "pfct"      ? [[228, 252, 241], [6, 102, 63]]
                :                           [[238, 243, 255], [20, 86, 240]];
     const [a, b] = ramp;
     const c = a.map((v, i) => Math.round(v + (b[i] - v) * t));
