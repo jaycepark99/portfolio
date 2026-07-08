@@ -1212,14 +1212,14 @@ for name, model in models.items():   # RF / LR / DT / NB / XGBoost
     metric: { value: "17,000+", label: "활성 사용자\n(배포 약 한 달 만에)" },
     chip: "바이브코딩 MVP · 운영·개선 루프",
     links: [
-      { label: "🎮 사이트 체험하기", url: "https://jobda-trainer.vercel.app/?utm_source=portfolio&utm_medium=referral&utm_campaign=resume" },
+      { label: "🎮 사이트 체험하기", url: "https://www.yeokgeom.com/?utm_source=portfolio&utm_medium=referral&utm_campaign=resume" },
     ],
     detail: {
       objective:
         "AI 역량검사를 연습하려 했지만 공식 체험은 매번 번거로운 사전 절차를 거쳐야 해 마음 편히 반복하기 어려웠습니다. 그래서 절차 없이 바로·무제한으로 연습할 수 있는 서비스를 직접 만들어 풀었습니다. 만드는 데 그치지 않고 — 측정 인프라를 깔고(GA4·UTM), 실사용자 피드백으로 검증해, 며칠 단위로 다시 배포하는 '만들고 → 측정 → 분석 → 개선' 루프를 혼자 돌리는 프로젝트입니다.",
       question: "내가 겪은 불편을 직접 서비스로 만들어, 데이터로 검증하며 계속 키울 수 있을까?",
       data: {
-        source: "직접 제작·운영하는 웹 서비스 (jobda-trainer.vercel.app)",
+        source: "직접 제작·운영하는 웹 서비스 (www.yeokgeom.com)",
         period: "2026.06.01 배포 ~ (운영 중) · 데이터 2026.07.04 기준",
         scale: "GA4 누적 활성 사용자 17,000+ · 활성 사용자당 평균 참여 1시간 00분 · Supabase 누적 로그 약 7.5만 건 (2026.6.1 배포 후 약 한 달 만에 17,000+ 달성 · 7.7 기준 누적 17,583명)",
         preprocessing: [],
@@ -1393,7 +1393,7 @@ from firsts group by 1 order by 1;`,
         "직접 만든 서비스에서 모바일 사용자에게 PC를 권하던 배너를 제거하는 결정을 내렸는데, 마침 유입 급등이 겹쳐 효과를 단정할 수 없었습니다. 데스크톱을 대조군으로 삼아 '전환율 상승이 배너 덕인지 유입 질 덕인지'를 이중차분으로 분리한 분석입니다. 핵심은 '같은 날 겹친 두 변화를 어떻게 가르는가'입니다.",
       question: "배너를 뺐더니 모바일 진입이 늘었다. 그런데 하필 유입도 급등했다 — 이 개선이 정말 배너 덕일까, 유입 질 덕일까?",
       data: {
-        source: "자체 운영 사이트 jobda-trainer.vercel.app · GA4 탐색 분석 (이벤트·기기·세션 소스)",
+        source: "자체 운영 사이트 www.yeokgeom.com · GA4 탐색 분석 (이벤트·기기·세션 소스)",
         period: "2026.06.01 ~ 06.23 (배너 제거 6/17 기준 전·후)",
         scale: "GA4 일별 기기×이벤트(page_view·game_start) — 배너 전 6/1~16 vs 후 6/17~23 · 유입 설문 326명",
         preprocessing: [],
@@ -1504,7 +1504,7 @@ from firsts group by 1 order by 1;`,
     metric: { value: "123건", label: "VOC 전수 자동 분류\n(수작업 → 파이프라인)" },
     chip: "RAG 상담봇 · 노코드 자동화",
     links: [
-      { label: "🤖 사이트에서 상담봇 체험", url: "https://jobda-trainer.vercel.app/?utm_source=portfolio&utm_medium=referral&utm_campaign=aiops" },
+      { label: "🤖 사이트에서 상담봇 체험", url: "https://www.yeokgeom.com/?utm_source=portfolio&utm_medium=referral&utm_campaign=aiops" },
     ],
     detail: {
       objective:
