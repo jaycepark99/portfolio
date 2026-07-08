@@ -58,7 +58,7 @@ const PRESETS = {
   catchtable: { label: "사업 지표·KPI 구조화 · 원인 진단·A/B 검증 · SQL 코호트 분석", featured: "dashboard", show: ["abtest", "growth", "trainer"] },
   kakaopay:   { label: "AI 반복 업무 자동화 · SQL 데이터 관리 · 직접 빌드·운영", featured: "dashboard", show: ["trainer", "aiops", "abtest"] },
   channeltalk: { label: "AI 업무 자동화(n8n·Dify) · RAG 상담봇 직접 빌드 · 도입 후 데이터 검증", featured: "aiops", show: ["trainer", "abtest", "dashboard"] },
-  pfct:       { label: "Zero-to-One AI 제품 빌드·가설검증 · 신용 리스크·LTV · B2B AI 솔루션 제품화", featured: "trainer", show: ["churn", "aiops", "abtest"] },
+  pfct:       { label: "Zero-to-One AI 제품 빌드·가설검증 · 이해관계자 설득·A/B · B2B AI 솔루션 제품화 · 신용 리스크", featured: "trainer", show: ["abtest", "aiops", "churn"] },
 };
 
 const HERO_STATS = [
