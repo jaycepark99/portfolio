@@ -182,6 +182,24 @@ html[data-theme="pfct"] .btn--primary { background: #0DF28A; color: #05372A; }
 html[data-theme="pfct"] .btn--primary:hover { background: #0AD97B; color: #05372A; }
 /* featured 카드 사이드: 형광 민트 끝에서 흰 글자가 묻히지 않게 딥 에메랄드→중간 민트로(우아한청년들 패턴) */
 html[data-theme="pfct"] .card--featured .card__side { background: linear-gradient(160deg, #05663F 0%, #0BB06E 100%); }
+/* ?set=lawcompany — 로앤컴퍼니(로톡): 블랙 베이스 + 강조에만 주황(#FF5E00, 사용자 지정).
+   주황은 '완전 강조'에만 튀게 → 텍스트·숫자·차트는 잉크 블랙, 주황은 아이브로·라벨·도트·불릿·
+   버튼·featured 배경 칠로만(카카오페이/PFCT 패턴, '약간 블랙에 주황 느낌'). */
+html[data-theme="lawcompany"] {
+  --accent:    #161616;   /* 잉크 블랙 — 텍스트·숫자·차트 */
+  --accent-2:  #FF5E00;   /* 로톡 오렌지 — 아이브로·라벨·도트·불릿 강조 */
+  --accent-bg: #FFEDE2;   /* 옅은 주황 배경 */
+}
+html[data-theme="lawcompany"] .hero__eyebrow,
+html[data-theme="lawcompany"] .section__tag,
+html[data-theme="lawcompany"] .hero__title b,
+html[data-theme="lawcompany"] .d-h2__no { color: #FF5E00; }
+/* 버튼·featured 칠은 주황 + 흰 글자(주황 위 흰 글자 대비 충분) */
+html[data-theme="lawcompany"] .nav__cta { background: #FF5E00; color: #fff !important; }
+html[data-theme="lawcompany"] .nav__cta:hover { background: #E65400; color: #fff !important; }
+html[data-theme="lawcompany"] .btn--primary { background: #FF5E00; color: #fff; }
+html[data-theme="lawcompany"] .btn--primary:hover { background: #E65400; color: #fff; }
+html[data-theme="lawcompany"] .card--featured .card__side { background: linear-gradient(160deg, #1a1a1a 0%, #FF5E00 100%); }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }

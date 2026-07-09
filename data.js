@@ -59,6 +59,7 @@ const PRESETS = {
   kakaopay:   { label: "AI 반복 업무 자동화 · SQL 데이터 관리 · 직접 빌드·운영", featured: "dashboard", show: ["trainer", "aiops", "abtest"] },
   channeltalk: { label: "AI 업무 자동화(n8n·Dify) · RAG 상담봇 직접 빌드 · 도입 후 데이터 검증", featured: "aiops", show: ["trainer", "abtest", "dashboard"] },
   pfct:       { label: "Zero-to-One AI 제품 빌드·가설검증 · B2B AI 솔루션 제품화 · 이해관계자 설득·A/B · 신용 리스크", featured: "trainer", show: ["aiops", "abtest", "churn"] },
+  lawcompany: { label: "AI 워크플로우 설계·업무 자동화(n8n·Dify) · 가설 검증·A/B · 광고주별 세그먼트 차등 전략 · 퍼포먼스 계측", featured: "aiops", show: ["trainer", "abtest", "churn"] },
 };
 
 const HERO_STATS = [
