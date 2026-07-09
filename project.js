@@ -56,6 +56,8 @@
     ? ["#111827", "#0DF28A", "#5cf3b3", "#a3f8d3", "#e4fcf1"]
     : setParam === "lawcompany"
     ? ["#161616", "#FF5E00", "#ff8640", "#ffb180", "#ffdcc2"]
+    : setParam === "hackle"
+    ? ["#0065FF", "#4d94ff", "#7db0ff", "#aecbff", "#dfe9ff"]
     : ["#1456f0", "#3b82f6", "#6f9cf5", "#a8c2f9", "#d4e2fd"];
   const setQS = setParam ? `&set=${encodeURIComponent(setParam)}` : "";
   const backHref = "index.html" + (setParam ? `?set=${encodeURIComponent(setParam)}` : "") + "#projects";
@@ -224,6 +226,7 @@
                : setParam === "channeltalk" ? [[238, 234, 255], [85, 44, 255]]
                : setParam === "pfct"      ? [[228, 252, 241], [6, 102, 63]]
                : setParam === "lawcompany" ? [[255, 237, 226], [255, 94, 0]]
+               : setParam === "hackle"    ? [[229, 240, 255], [0, 101, 255]]
                :                           [[238, 243, 255], [20, 86, 240]];
     const [a, b] = ramp;
     const c = a.map((v, i) => Math.round(v + (b[i] - v) * t));
