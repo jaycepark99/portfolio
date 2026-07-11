@@ -60,7 +60,7 @@ const PRESETS = {
   channeltalk: { label: "AI 업무 자동화(n8n·Dify) · RAG 상담봇 직접 빌드 · 도입 후 데이터 검증", featured: "aiops", show: ["trainer", "abtest", "dashboard"] },
   pfct:       { label: "Zero-to-One AI 제품 빌드·가설검증 · B2B AI 솔루션 제품화 · 이해관계자 설득·A/B · 신용 리스크", featured: "trainer", show: ["aiops", "abtest", "churn"] },
   lawcompany: { label: "AI 서비스 직접 빌드·퍼포먼스 계측 · AI 워크플로우 설계·자동화(n8n·Dify) · 가설 검증·A/B · 세그먼트 차등 전략", featured: "trainer", show: ["aiops", "abtest", "churn"] },
-  hackle:     { label: "A/B·실험으로 성장 검증 · AI 서비스 직접 빌드·측정 · AI 업무 자동화(AX) · KPI·리텐션 대시보드", featured: "trainer", show: ["abtest", "aiops", "dashboard"] },
+  hackle:     { label: "A/B·실험으로 성장 검증 · AI 서비스 직접 빌드·측정 · AI 업무 자동화(AX) · KPI·리텐션 대시보드", featured: "trainer", show: ["aiops", "abtest", "dashboard"] },
 };
 
 const HERO_STATS = [
