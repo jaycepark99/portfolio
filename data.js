@@ -61,6 +61,7 @@ const PRESETS = {
   pfct:       { label: "Zero-to-One AI 제품 빌드·가설검증 · B2B AI 솔루션 제품화 · 이해관계자 설득·A/B · 신용 리스크", featured: "trainer", show: ["aiops", "abtest", "churn"] },
   lawcompany: { label: "AI 서비스 직접 빌드·퍼포먼스 계측 · AI 워크플로우 설계·자동화(n8n·Dify) · 가설 검증·A/B · 세그먼트 차등 전략", featured: "trainer", show: ["aiops", "abtest", "churn"] },
   hackle:     { label: "A/B·실험으로 성장 검증 · AI 서비스 직접 빌드·측정 · AI 업무 자동화(AX) · KPI·리텐션 대시보드", featured: "trainer", show: ["aiops", "abtest", "dashboard"] },
+  momolabs:   { label: "커머스 지표 대시보드 · 코호트/퍼널 · A/B 검증 · 의료 데이터 분석", featured: "dashboard", show: ["abtest", "growth", "trainer", "churn", "ddi"] },
 };
 
 const HERO_STATS = [

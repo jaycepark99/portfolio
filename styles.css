@@ -150,6 +150,12 @@ html[data-theme="hackle"] {
   --accent-2:  #4d94ff;   /* 보조 — 도트·그라데이션 */
   --accent-bg: #e5f0ff;
 }
+/* ?set=momolabs — 모모랩스 브랜드 네이비(로고·다이어그램·모집 헤드라인 색). 강조=딥 네이비, 보조=밝은 네이비 */
+html[data-theme="momolabs"] {
+  --accent:    #1B3C6E;   /* 모모랩스 네이비 — 텍스트·버튼·featured·차트 강조 */
+  --accent-2:  #3F6098;   /* 보조 — 도트·그라데이션 */
+  --accent-bg: #E9EEF6;
+}
 /* ?set=catchtable — 캐치테이블 포인트 오렌지레드(#FF3D00, 사용자 지정 공식 포인트색). 강조=오렌지레드, 보조=밝은 오렌지 */
 html[data-theme="catchtable"] {
   --accent:    #FF3D00;   /* 캐치테이블 오렌지레드 — 텍스트·버튼·featured·차트 강조 */
