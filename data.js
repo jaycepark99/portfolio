@@ -57,7 +57,7 @@ const PRESETS = {
   supercent:  { label: "실험·증분 기여도(Incrementality)·채널 계측 · Feature Engineering·LTV · KPI 발굴", featured: "trainer", show: ["abtest", "churn", "growth"] },
   catchtable: { label: "사업 지표·KPI 구조화 · 원인 진단·A/B 검증 · SQL 코호트 분석", featured: "dashboard", show: ["abtest", "growth", "trainer"] },
   kakaopay:   { label: "AI 반복 업무 자동화 · SQL 데이터 관리 · 직접 빌드·운영", featured: "dashboard", show: ["trainer", "aiops", "abtest"] },
-  kakaobank:  { label: "AI 품질·안전성 검증 · AI 서비스 직접 빌드·운영 · 평가 시나리오 설계 · 데이터로 효과 검증", featured: "aiops", show: ["trainer", "abtest", "churn"] },
+  kakaobank:  { label: "AI 품질·안전성 검증 · AI 서비스 직접 빌드·운영 · 평가 시나리오 설계 · 데이터로 효과 검증", featured: "aiops", show: ["trainer", "abtest", "dashboard"] },
   channeltalk: { label: "AI 업무 자동화(n8n·Dify) · RAG 상담봇 직접 빌드 · 도입 후 데이터 검증", featured: "aiops", show: ["trainer", "abtest", "dashboard"] },
   pfct:       { label: "Zero-to-One AI 제품 빌드·가설검증 · B2B AI 솔루션 제품화 · 이해관계자 설득·A/B · 신용 리스크", featured: "trainer", show: ["aiops", "abtest", "churn"] },
   lawcompany: { label: "AI 서비스 직접 빌드·퍼포먼스 계측 · AI 워크플로우 설계·자동화(n8n·Dify) · 가설 검증·A/B · 세그먼트 차등 전략", featured: "trainer", show: ["aiops", "abtest", "churn"] },

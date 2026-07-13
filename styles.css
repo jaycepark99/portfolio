@@ -178,6 +178,19 @@ html[data-theme="kakaopay"] .btn--primary:hover { background: #F2DC00; color: #1
 html[data-theme="kakaopay"] .card--featured .card__side { background: linear-gradient(160deg, #FFEB00 0%, #FFD900 100%); }
 html[data-theme="kakaopay"] .card--featured .card__side .metric__value { color: #191919; }
 html[data-theme="kakaopay"] .card--featured .card__side .metric__label { color: rgba(25,25,25,.72); }
+/* ?set=kakaobank — 카카오뱅크: 카카오페이와 동일한 카카오 옐로(#FFEB00)/블랙 패턴(같은 카카오 계열). */
+html[data-theme="kakaobank"] {
+  --accent:    #161616;
+  --accent-2:  #6b6b6b;
+  --accent-bg: #FFF8CC;
+}
+html[data-theme="kakaobank"] .nav__cta { background: #FFEB00; color: #191919 !important; }
+html[data-theme="kakaobank"] .nav__cta:hover { background: #F2DC00; color: #191919 !important; }
+html[data-theme="kakaobank"] .btn--primary { background: #FFEB00; color: #191919; }
+html[data-theme="kakaobank"] .btn--primary:hover { background: #F2DC00; color: #191919; }
+html[data-theme="kakaobank"] .card--featured .card__side { background: linear-gradient(160deg, #FFEB00 0%, #FFD900 100%); }
+html[data-theme="kakaobank"] .card--featured .card__side .metric__value { color: #191919; }
+html[data-theme="kakaobank"] .card--featured .card__side .metric__label { color: rgba(25,25,25,.72); }
 /* ?set=pfct — PFC Technologies: 검정 워드마크 + 민트(#0DF28A) 액센트.
    민트는 형광이라 흰 배경 텍스트로 대비가 약함 → 카카오페이 패턴처럼 텍스트·숫자·차트는 잉크 블랙,
    민트는 버튼·도트·featured 배경 칠·연한 민트 배경으로만(브랜드 정체성=블랙+민트 그대로). */
