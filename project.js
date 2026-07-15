@@ -24,6 +24,8 @@
     ? ["#A64DFF", "#C58CFF", "#d9b8ff", "#e8d4ff", "#f4ebff"]
     : setParam === "woowa"
     ? ["#0A9486", "#06EFD3", "#62efdd", "#a6f6ec", "#dcfbf6"]
+    : setParam === "nxnlabs"
+    ? ["#0B9E89", "#32FFD2", "#6ef7e0", "#a8f7ec", "#ddfcf6"]
     : setParam === "musinsa"
     ? ["#111111", "#c5cad3", "#e0e4ea", "#eef0f3", "#f5f6f8"]
     : setParam === "danggeun"
@@ -213,6 +215,7 @@
     const ramp = setParam === "modoodoc" ? [[243, 236, 252], [83, 7, 176]]
                : setParam === "codeit"   ? [[244, 235, 255], [166, 77, 255]]
                : setParam === "woowa"     ? [[227, 253, 248], [10, 122, 108]]
+               : setParam === "nxnlabs"   ? [[228, 255, 249], [11, 133, 116]]
                : setParam === "musinsa"   ? [[240, 241, 243], [17, 17, 17]]
                : setParam === "danggeun"  ? [[255, 242, 232], [255, 111, 15]]
                : setParam === "levit"     ? [[255, 226, 226], [251, 69, 69]]
