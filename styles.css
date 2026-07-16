@@ -19,7 +19,13 @@
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-/* 회사별 테마 — 해당 프리셋일 때만 색 교체. 기본·다른 프리셋은 블루 유지 */
+/* 회사별 테마 — 해당 프리셋일 때만 색 교체. 기본·다른 프리셋은 딥 인디고 유지 */
+/* ?set=doers — 두어스/ZVZO 브랜드 버건디(#641725, 제품·채용페이지 accent). 로고는 인디고지만 제품색으로 매칭 */
+html[data-theme="doers"] {
+  --accent:    #641725;   /* ZVZO 버건디 — 텍스트·버튼·featured·차트 강조 */
+  --accent-2:  #A6324B;   /* 밝은 로즈-버건디 — 도트·그라데이션 */
+  --accent-bg: #F8EBEE;   /* 옅은 로즈 — 강조 배경 */
+}
 html[data-theme="modoodoc"] {
   --accent:    #5307B0;
   --accent-2:  #7F4FDF;
