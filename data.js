@@ -42,7 +42,7 @@ const PRESETS = {
   codeit:     { label: "이탈 예측·통계·학습 데이터 분석·바이브코딩", featured: "churn", show: ["trainer", "abtest", "dashboard"] },
   woowa:      { label: "운영 지표 분석·이탈/수급·실험", featured: "abtest", show: ["dashboard", "churn", "growth", "trainer"] },
   musinsa:    { label: "바이브코딩·AI 모델 평가·실험·대시보드 자동화", featured: "trainer", show: ["churn", "abtest", "dashboard"] },
-  danggeun:   { label: "현장 운영 개선·VOC·자동화·AI 빌드", featured: "abtest", show: ["dashboard", "trainer", "growth"] },
+  danggeun:   { label: "현장 혜택 실험·재방문 분석 · 운영 대시보드 · AI 자동화·빌드", featured: "abtest", show: ["dashboard", "aiops", "trainer"] },
   levit:      { label: "AI 제품 직접 빌드·PMF 검증·고객 문제 발굴", featured: "trainer", show: ["dashboard", "growth", "abtest"] },
   wrtn:       { label: "AI 에이전트·자동화 직접 빌드 · LLM·프롬프트 · 측정 운영", featured: "trainer", show: ["dashboard", "abtest", "churn"] },
   delivus:    { label: "배송·물류 운영 분석·A/B·통계 검증·이탈 예측 모델링", featured: "abtest", show: ["dashboard", "churn", "trainer"] },
