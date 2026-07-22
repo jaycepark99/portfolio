@@ -66,6 +66,7 @@ const PRESETS = {
   hackle:     { label: "A/B·실험으로 성장 검증 · AI 서비스 직접 빌드·측정 · AI 업무 자동화(AX) · KPI·리텐션 대시보드", featured: "trainer", show: ["aiops", "abtest", "dashboard"] },
   momolabs:   { label: "커머스 지표 대시보드 · 코호트/퍼널 · A/B 검증 · 의료 데이터 분석", featured: "dashboard", show: ["abtest", "growth", "trainer", "churn", "ddi"] },
   caring:     { label: "사용자 문제 → AI 제품 직접 빌드 · 가설·파일럿 데이터 검증 · AI 품질·실패 케이스 관리 · 프롬프트 설계·운영", featured: "trainer", show: ["aiops", "abtest", "dashboard"] },
+  gameduo:    { label: "게임 데이터 분석 · A/B·인과추론(DiD) · 이탈/LTV 예측 · 계측·직접 빌드", featured: "trainer", show: ["abtest", "churn"] },
 };
 
 const HERO_STATS = [
