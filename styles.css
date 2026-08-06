@@ -163,6 +163,12 @@ html[data-theme="channeltalk"] {
   --accent-2:  #7a5aff;   /* 보조 — 도트·그라데이션 */
   --accent-bg: #eeeaff;
 }
+/* ?set=ontheplanet — 온더플래닛 포인트 틸(#29B4A0, 사용자 지정). 강조=틸그린, 보조=밝은 민트 */
+html[data-theme="ontheplanet"] {
+  --accent:    #29B4A0;   /* 온더플래닛 틸 — 텍스트·버튼·featured·차트 강조 */
+  --accent-2:  #5fcfbe;   /* 보조 — 도트·그라데이션 */
+  --accent-bg: #e4f6f3;
+}
 /* ?set=hackle — 핵클 시그니처 블루(#0065FF, hackle.io 실측). 강조=azure 블루, 보조=밝은 블루 */
 html[data-theme="hackle"] {
   --accent:    #0065FF;   /* 핵클 블루 — 텍스트·버튼·featured·차트 강조 */

@@ -52,6 +52,8 @@
     ? ["#FF3D00", "#ff6a33", "#ff9166", "#ffbd9e", "#ffe4d6"]
     : setParam === "kakaopay" || setParam === "kakaobank"
     ? ["#161616", "#FFDE00", "#ffe95c", "#fff29e", "#fff9d6"]
+    : setParam === "ontheplanet"
+    ? ["#29B4A0", "#5fcfbe", "#8adfd2", "#b7ece4", "#e4f6f3"]
     : setParam === "channeltalk"
     ? ["#552CFF", "#7a5aff", "#9d85ff", "#c3b5ff", "#e7e1ff"]
     : setParam === "pfct"
