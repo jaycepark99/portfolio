@@ -67,7 +67,7 @@ const PRESETS = {
   momolabs:   { label: "커머스 지표 대시보드 · 코호트/퍼널 · A/B 검증 · 의료 데이터 분석", featured: "dashboard", show: ["abtest", "growth", "trainer", "churn", "ddi"] },
   caring:     { label: "사용자 문제 → AI 제품 직접 빌드 · 가설·파일럿 데이터 검증 · AI 품질·실패 케이스 관리 · 프롬프트 설계·운영", featured: "trainer", show: ["aiops", "abtest", "dashboard"] },
   gameduo:    { label: "게임 데이터 분석 · A/B·인과추론(DiD) · 이탈/LTV 예측 · 계측·직접 빌드", featured: "trainer", show: ["abtest", "churn"] },
-  ontheplanet: { label: "AI·LLM 업무 자동화 직접 빌드 · AI 서비스 기획·운영 · 지표 관리·프로세스 효율화", featured: "aiops", show: ["trainer", "dashboard", "abtest"] },
+  ontheplanet: { label: "AI 서비스 기획·직접 빌드 · AI·LLM 업무 자동화(n8n·Dify) · 지표 관리·효과 검증 · 프로세스 효율화", featured: "trainer", show: ["aiops", "abtest", "dashboard"] },
 };
 
 const HERO_STATS = [
